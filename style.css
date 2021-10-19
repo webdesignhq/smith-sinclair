@@ -54,6 +54,12 @@ a {
 	max-width: 90%;
 }
 
+input[type=text], input[type=tel], input[type=email], textarea {
+	border: none;
+	background-color: var(--grey-color);
+	padding: 10px 10px;
+}
+
 /* Header */
 header {
   background-color: var(--white-color);
@@ -246,7 +252,7 @@ header .cart__text {
 /* Products Section */
 
 #products {
-  padding-top: 100px 0;
+  padding: 100px 0;
   background-size: 75%;
   background-repeat: no-repeat;
   background-position: right;
@@ -279,6 +285,22 @@ font-weight: 800;
 #products .product .product-price {
   font-size: 40px;
   color: #444444;
+}
+
+#single-product .slider-for img {
+	height: 500px;
+	width: 100%;
+	object-fit: cover;
+}
+
+#single-product .slider-nav img {
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+}
+
+#single-product .price {
+	font-size: 30px;
 }
 
 

@@ -52,7 +52,7 @@
 
 
 </header>
-		<?php if(!is_page(11) && (!is_category ())) { ?>
+		<?php if(!is_front_page() && (!is_product_category () && (!is_shop()) && (!is_product()))) { ?>
 		<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
 		<div id="bannerindex" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat; background-size: cover;">
 		<div class="container-xxl">
@@ -67,6 +67,34 @@
 			</div>
 		</div>
 	</div>
+	<?php } elseif(is_product_category() || (is_product())) {?>
+		
+		<div id="bannerindex" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png') no-repeat; background-size: cover;">
+			<div class="container-xxl">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="bannerindexcontent text-left p-4">
+							<h1><?php echo single_term_title(); ?></h1>
+							<p><?php the_breadcrumb(); ?></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php } elseif(is_shop()) {?>
+		<div id="bannerindex" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png') no-repeat; background-size: cover;">
+			<div class="container-xxl">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="bannerindexcontent text-left p-4">
+							<h1>Assortiment</h1>
+							<p><?php the_breadcrumb(); ?></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
 	<?php } ?>
 
 

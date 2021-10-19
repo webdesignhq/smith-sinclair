@@ -4,7 +4,7 @@ $().ready(()=> {
     $('.slider-for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         fade: true,
         asNavFor: '.slider-nav'
       });
@@ -22,8 +22,7 @@ $().ready(()=> {
         autoplaySpeed: 3000,
       });
 
-      $('.slick-next').html('<i class="fa-solid fa-chevron-right"></i>');
-      $('.slick-prev').html('<i class="fa-solid fa-chevron-left"></i>');
+ 
 
 
     $(".clickable").click(function(e) {

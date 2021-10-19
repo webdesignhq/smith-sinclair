@@ -53,7 +53,7 @@ if ( is_product_category() ){
 			<img style="width:100%;" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image mx-auto" />
 			<p class="product-title"><?php the_title() ?></p>
 			<span class="product-price"><?php echo $product->get_price_html();  ?></span>
-			<a href="<?php the_permalink() ?>" class="product__button py-3 mt-3">In winkelwagen</a>
+			<a href="<?php the_permalink() ?>" class="btn btn-primary">In winkelwagen</a>
 		</div>
 
 		<?php endwhile; ?>
