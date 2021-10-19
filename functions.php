@@ -16,7 +16,7 @@ function website_setup()
 		'primary'   => __( 'Primary Menu', 'website' ),
 		'secondary' => __( 'Secondary Menu', 'website' ),
 		'footer_moreinfo' => __( 'Footer Meer informatie', 'website' ),
-		'footer_categories' => __( 'Footer Categorieën', 'website' )
+		'footer_customerservice' => __( 'Footer Klantenservice', 'website' )
 	) );
 	
 	if ( ! isset ( $content_width) )
@@ -26,24 +26,14 @@ function website_setup()
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
 	add_theme_support( 'custom-background' );
+	add_post_type_support( 'page', 'excerpt' );
 	add_theme_support( 'post-thumbnails' ); 
 	add_theme_support('woocommerce');
 	add_theme_support( 'wc-product-gallery-slider' );
+
 }
 endif; // website setup
-
-/* Custom logo setup */
-function website_custom_logo_setup() {
-    $defaults = array(
-        'height'      => 50,
-        'width'       => 200,
-        'flex-height' => true,
-        'flex-width'  => true,
-        'header-text' => array( 'site-title', 'site-description' ),
-    );
-    add_theme_support( 'custom-logo', $defaults );
-}
-add_action( 'after_setup_theme', 'website_custom_logo_setup' );
+add_action( 'after_setup_theme', 'website_setup' );
 
 
 /* Adding breadcrubs */
@@ -68,15 +58,26 @@ function the_breadcrumb() {
 }
 
 
-/* SVG files */
-function cc_mime_types($mimes) {
-	$mimes['svg'] = 'image/svg+xml';
-	return $mimes;
-   }
-   add_filter('upload_mimes', 'cc_mime_types');
+/* Posibility to add a custom logo */
+function website_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 50,
+        'width'       => 200,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'website_custom_logo_setup' );
 
+function sf_update_woo_flexslider_options( $options ) {
 
-add_filter('add_to_cart_custom_fragments', 'woocommerce_header_add_to_cart_custom_fragment');
+    $options['directionNav'] = true;
+
+    return $options;
+}
+
 
 /* Header add to cart */
 function woocommerce_header_add_to_cart_custom_fragment( $cart_fragments ) {
@@ -90,18 +91,7 @@ function woocommerce_header_add_to_cart_custom_fragment( $cart_fragments ) {
 }
 
 add_filter( 'woocommerce_single_product_carousel_options', 'sf_update_woo_flexslider_options' );
-/** 
- * Filer WooCommerce Flexslider options - Add Navigation Arrows
- */
-function sf_update_woo_flexslider_options( $options ) {
-
-    $options['directionNav'] = true;
-
-    return $options;
-}
 
 
-
-?>
 
 

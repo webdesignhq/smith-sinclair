@@ -9,15 +9,17 @@ get_header();
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-4">
-				<img src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png"/>
+				<img style="width:100%;" src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png"/>
+			</div>
+			<div class="col-lg-4 banner-middle">
+				<img style="width:100%;" src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-2.png"/>
+				<div class="banner-content">
+					<h1>Wij zijn Smith <br> & sinclair</h1>
+					<span>En onze missie is om volwassen zijn leuker te maken</span>
+				</div>
 			</div>
 			<div class="col-lg-4">
-				<img src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-2.png"/>
-				<h1>Wij zijn Smith <br> & sinclair</h1>
-				<span>En onze missie is om volwassen zijn leuker te maken</span>
-			</div>
-			<div class="col-lg-4">
-				<img src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-3.png"/>
+				<img style="width:100%;"  src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-3.png"/>
 			</div>
 		</div>
 	</div>
@@ -86,7 +88,7 @@ get_header();
 					<?php if($cat->category_parent == 0) {
 						$category_id = $cat->term_id; ?>
 						<div class="col-lg-6 col-11 me-lg-2 mx-auto mt-3 category clickable" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png');">
-							<a href="<?php echo get_term_link($cat->slug, 'product_cat') ?>"><?php echo $cat->name ?></a>
+							<span><a href="<?php echo get_term_link($cat->slug, 'product_cat') ?>"><?php echo $cat->name ?></a></span>
 						</div>	
 					<?php } ?>				
 			<?php } ?>

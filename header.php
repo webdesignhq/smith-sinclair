@@ -28,42 +28,46 @@
 
 <body>
 
-<header class="container-fluid py-4 sticky-top">
-	<div class="header d-flex flex-row justify-content-between">
-		<div class="shop__logo col-lg-2 col-2 pt-3">
-			<?php 
-							if ( function_exists( 'the_custom_logo' ) ) {
-								 the_custom_logo();
-								}
-			?>
+<header class="container-fluid sticky-top">
+	<div class="header d-flex flex-row justify-content-between align-items-center">
+		<div class="shop__logo col-lg-2 col-2">
+			<?php if ( function_exists( 'the_custom_logo' ) ) {
+					 the_custom_logo();
+				} ?>
 		</div>
-		<div class="col-lg-2 col-2">
+		<div class="col-lg-5 col-4">
 			<button class="menu-toggle btn" type="btn" onclick=""><i class="fas fa-bars"></i></button>
 				<nav id="site-navigation" class="main-navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav>
 		</div>
-		<div class="shop__search col-lg-3 col-3 mt-lg-0 mt-4 d-lg-block d-none">
-			<!-- <form><input type="text" placeholder="Zoeken naar " class="search mx-auto py-2 px-4"/></form> -->
+		<div class="search col-lg-2 col-2 mt-lg-0 mt-4 d-lg-block d-none">
 			<?php get_search_form(); ?>
 		</div>
-		<div class="shop__controls col-lg-5 col-4 text-align-right d-none d-lg-inline-flex justify-content-lg-end justify-content-center mt-lg-0 mt-0">
-			<a href="#" class="mx-lg-3 ms-0 me-2 pt-3"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/heart.svg" /></a>
+		<div class="shop__controls col-lg-2 col-1 text-align-right d-none d-lg-inline-flex justify-content-lg-end justify-content-center mt-lg-0 mt-0">
 			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="mx-lg-3 mx-2 pt-3"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/user.svg" /></a>
-			<a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Winkelwagen' ); ?>" class="mx-lg-3 mx-2 cart__icon d-inline-flex"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/shopping-cart.svg" />
-			<div class="cart__text pt-2 ps-3 d-lg-block d-none">
-				<!-- <?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> -->
-				<p>Winkelwagen</p>
-				<p class="cart__amount">
-					<?php echo WC()->cart->get_cart_total(); ?> 				
-				</p>
-			</div>
-			</a>
+			<a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Winkelwagen' ); ?>" class="mx-lg-3 mx-2 cart__icon d-inline-flex"><i class="fas fa-shopping-basket"></i></a>
 		</div>
 	</div>
 
-</header>
 
+</header>
+		<?php if(!is_page(11) && (!is_category ())) { ?>
+		<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+		<div id="bannerindex" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat; background-size: cover;">
+		<div class="container-xxl">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="bannerindexcontent text-left p-4">
+						<h1><?php echo get_the_title(); ?></h1>
+						<span><?php echo the_excerpt(); ?></span>
+						<p><?php the_breadcrumb(); ?></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php } ?>
 
 
 
