@@ -45,14 +45,18 @@ get_header();
 
 				while ( $loop->have_posts() ) : $loop->the_post();
 					global $product;
+					$productID = $product->get_id();
+					$productVar = wc_get_product( $productID );
+					$checkout_url = wc_get_checkout_url(); 
 
 			?>
 
-				<div class="product d-flex flex-column">
+				<div class="product d-flex flex-column justify-content-between clickable">
 					<img src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product-image mx-auto" />
 					<p class="product-title"><?php the_title() ?></p>
 					<span class="product-price"><?php echo $product->get_price_html();  ?></span>
-					<a href="<?php the_permalink() ?>" class="btn btn-primary">In winkelwagen</a>
+					<!-- <?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '" class="btn btn-primary">'?>In winkelwagen</a> -->
+					<a href="<?php echo get_permalink(); ?>" class="btn btn-primary">In winkelwagen</a>
 					</div>
 
 				<?php

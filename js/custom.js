@@ -22,9 +22,6 @@ $().ready(()=> {
         autoplaySpeed: 3000,
       });
 
- 
-
-
     $(".clickable").click(function(e) {
         e.preventDefault();
         window.location = $(this).find('a').attr('href');
