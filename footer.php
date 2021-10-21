@@ -22,10 +22,11 @@
 		</div>
 	</div>
 </div>
-<div id="footer">
+<div id="footer" style="position: relative;">
+	<img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:230px; height: auto; position: absolute; top: -120px; left: -50px;">
 	<div class="container-xxl">
-		<div class="col-lg-12 col-12 mx-auto d-lg-flex d-block flex-row justify-content-lg-between justify-content-start">
-			<div class="col-lg-4 col-12">
+		<div class="col-lg-10 col-12 mx-auto d-lg-flex d-block flex-row justify-content-lg-between justify-content-start">
+			<div class="col-lg-3 col-12">
 				<span>Hoe kunnen wij jou helpen?</span>
 				<p>Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek.</p>
 				<div class="socials__container col-6 mt-4 d-flex flex-row justify-content-between">
@@ -35,13 +36,13 @@
 				</div>
 
 			</div>
-			<div class="col-lg-3 col-12">
-				<span>Meer informatie</span>
-				<?php wp_nav_menu( array( 'theme_location' => 'footer_moreinfo' ) ); ?>
-			</div>
-			<div class="col-lg-2 col-12">
-			<span>Klantenservice</span>
+			<div class="col-lg-3 offset-1 col-12">
+				<span>Klantenservice</span>
 				<?php wp_nav_menu( array( 'theme_location' => 'footer_customerservice' ) ); ?>
+			</div>
+			<div class="col-lg-3 col-12">
+			<span>Informatie</span>
+				<?php wp_nav_menu( array( 'theme_location' => 'footer_information' ) ); ?>
 			</div>
 			<div class="col-lg-3 col-12">
 			<span>Waar vind je ons?</span>

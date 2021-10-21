@@ -42,7 +42,7 @@ if ( is_product_category() ){
 
 					$secondArgs = array(
 						'post_type'      => 'product',
-						'posts_per_page' => 12,
+						'posts_per_page' => 4,
 						'paged' => $paged,
 						'offset' => 6,
 						'tax_query'     => array(
@@ -70,13 +70,13 @@ if ( is_product_category() ){
 
 		?>
 
-		<div class="product d-flex flex-column mt-1 clickable">
-			<a href="#" class="product__favorites--button"><i class="fa-regular fa-heart" aria-hidden="true"></i></a>
+		<div class="product d-flex flex-column mt-1 clickable justify-content-between">
+		<i class="fa-regular fa-heart product__favorites--button" aria-hidden="true"></i>
 			<img style="width:100%;" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image mx-auto" />
 			<p class="product-title mt-4"><?php the_title() ?></p>
 			<span class="product-price"><?php echo $product->get_price_html();  ?></span>
 			<!-- <?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '" class="btn btn-primary">'?>In winkelwagen</a> -->
-			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary">In winkelwagen</a>
+			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary">Bekijken</a>
 		</div>
 
 		<?php endwhile; ?>
@@ -84,9 +84,11 @@ if ( is_product_category() ){
 		<?php
 		if($cat){
 		?>
-		<div class="product newsletter d-flex flex-column align-center mt-1 clickable justify-content-center" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/gin.jpeg'); background-size: cover;">
-			<span class="head">Meld je aan</span>
-			<span class="sub__head">Voor de nieuwsbrief</span>
+		<div class="product newsletter d-flex flex-column align-center mt-1 justify-content-center" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/gin.jpeg'); background-size: cover;">
+			<div class="overlay d-flex flex-column justify-content-center align-center">
+				<span class="head">Meld je aan</span>
+				<span class="sub__head">Voor de nieuwsbrief</span>
+			</div>
 		</div>
 	<?php
 		$secondLoop = new WP_Query( $secondArgs );
@@ -98,18 +100,25 @@ if ( is_product_category() ){
 
 		?>
 
-		<div class="product d-flex flex-column mt-1 clickable">
-			<a href="#" class="product__favorites--button"><i class="fa-regular fa-heart" aria-hidden="true"></i></a>
+		<div class="product d-flex flex-column mt-1 clickable justify-content-between">
+			<i class="fa-regular fa-heart product__favorites--button" aria-hidden="true"></i>
 			<img style="width:100%;" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image mx-auto" />
 			<p class="product-title mt-4"><?php the_title() ?></p>
 			<span class="product-price"><?php echo $product->get_price_html();  ?></span>
 			<!-- <?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '" class="btn btn-primary">'?>In winkelwagen</a> -->
-			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary">In winkelwagen</a>
+			<a href="<?php echo $product->get_permalink(); ?>" class="btn btn-primary">Bekijken </a>
 		</div>
 	<?php endwhile; ?>
 	<?php
 		}else{}
 		?>
+
+				<nav class="mx-auto pagination">
+                    <ul>
+                        <li><?php previous_posts_link( '&laquo; Vorige producten', $secondLoop->max_num_pages) ?></li> 
+                        <li><?php next_posts_link( 'Volgende producten &raquo;', $secondLoop->max_num_pages) ?></li>
+                    </ul>
+                </nav>
 	
 		 <?php else: ?>
 		<p>Sorry, er zijn geen producten gevonden<p>
@@ -117,6 +126,14 @@ if ( is_product_category() ){
   
 	</div>
 </div>
+		<div class="category__information--container--title col-6 mx-auto">
+			<div class="col-12"><h3 class=""><?php echo single_term_title(); ?></h3></div>
+		</div>
+		<div class="category__information--container mt-4 pb-5 col-6 mx-auto">
+			<div class="col-12 pe-5">
+				<?php echo the_archive_description(); ?>
+			</div>
+		</div>
 
 <?php
 get_footer();
