@@ -118,6 +118,7 @@ header .cart__text {
 
 .woocommerce-breadcrumb a{
   color: var(--primary-color);
+  font-weight: bold;
 }
 
 /* Menu */

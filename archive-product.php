@@ -24,20 +24,27 @@ if ( is_product_category() ){
 		<?php if (have_posts()) : ?>     
 		<?php
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			
 
-			$args = array(
-				'post_type'      => 'product',
-				'posts_per_page' => 12,
-				'paged' => $paged,
-				'tax_query'     => array(
-					array(
-						'taxonomy'  => 'product_cat',
-						'field'     => 'id', 
-						'terms'     => $cat
-					)
-				)
-			);
+				if($cat){
+
+					$args = array(
+						'post_type'      => 'product',
+						'posts_per_page' => 12,
+						'paged' => $paged,
+						'tax_query'     => array(
+							array(
+								'taxonomy'  => 'product_cat',
+								'field'     => 'id', 
+								'terms'     => $cat
+							)
+						)
+					);
+				}else{
+					$args = array(
+						'post_type'      => 'product',
+						'posts_per_page' => 12,
+						'paged' => $paged
+);}
 
 			$loop = new WP_Query( $args );
 
