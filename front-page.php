@@ -87,12 +87,17 @@ get_header();
 					 'hide_empty'   => $empty
 			  );
 
+
 			 $all_categories = get_categories( $args );
 			 foreach ($all_categories as $cat) { ?>
 					<?php if($cat->category_parent == 0) {
-						$category_id = $cat->term_id; ?>
-						<div class="col-lg-6 col-11 me-lg-2 mx-auto mt-3 category clickable" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png'); background-size: cover;">
-							<span><a href="<?php echo get_term_link($cat->slug, 'product_cat') ?>"><?php echo $cat->name ?></a></span>
+						$category_id = $cat->term_id; 
+						$thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
+						$image = wp_get_attachment_url( $thumbnail_id ); ?>
+						
+						<div class="col-lg-6 p-5 col-11 me-lg-2 mx-auto mt-3 category clickable" style="background: url('<?php echo $image ?>'); background-size: cover;">
+							<div class="category-title"><a href="<?php echo get_term_link($cat->slug, 'product_cat') ?>"><?php echo $cat->name ?></a></div>
+							<p class="category-description"><?php echo $cat->description ?></p>
 						</div>	
 					<?php } ?>				
 			<?php } ?>

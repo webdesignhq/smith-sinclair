@@ -439,6 +439,17 @@ font-weight: 800;
   opacity: 1;
 }
 
+.category .category-title a {
+	font-size: 50px;
+	color: var(--white-color);
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.category .category-description {
+	color: var(--white-color);
+}
+
 
 /* Featured Section */
 #featured  {

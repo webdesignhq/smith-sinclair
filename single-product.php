@@ -37,13 +37,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				   
 					<div class="price--container row mt-4">
+						<div class="col-12 pb-3">
+							<?php echo $product->short_description; ?>
+						</div>
 						<div class="col-4">
 							<span class="price"><?php echo $product->get_price_html(); ?></span>
 						</div>
 					</div>
-					<div class="product__cta--container row d-flex flex-row mt-5">
-						<div class="col-8 d-flex justify-content-end"><span class="product__price--cta button__add--cart"><?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '">'?><?php the_field('txt-cart-btn', 'option'); ?></a></span></div>
+					<div class="col-lg-6 col-11 mt-5">
+						<?php echo '<a class="btn btn-primary" href="'. $checkout_url.'?add-to-cart=' .$productID. '">'?><?php the_field('txt-cart-btn', 'option'); ?></a>
 					</div>
+				</div>
+				<div class="col-lg-12 col-11 pt-5 pb-5 mx-auto mx-lg-0 product__info--container">
+				<p><?php echo $product->description; ?></p>
 				</div>
 		</div>
 	</div>
