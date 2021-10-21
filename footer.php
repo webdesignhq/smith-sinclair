@@ -40,8 +40,8 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'footer_moreinfo' ) ); ?>
 			</div>
 			<div class="col-lg-2 col-12">
-			<span>Brillen</span>
-				<?php wp_nav_menu( array( 'theme_location' => 'footer_categories' ) ); ?>
+			<span>Klantenservice</span>
+				<?php wp_nav_menu( array( 'theme_location' => 'footer_customerservice' ) ); ?>
 			</div>
 			<div class="col-lg-3 col-12">
 			<span>Waar vind je ons?</span>
