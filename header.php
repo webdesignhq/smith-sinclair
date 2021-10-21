@@ -77,8 +77,9 @@
 			if ( is_product_category() ){
 			$image = wp_get_attachment_url( $thumbnail_id ); 
 			}else{
-			$image = wp_get_attachment_url( $wp_query->get_image_id() );
+			$image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
 			}
+			
 		?>
 
 
