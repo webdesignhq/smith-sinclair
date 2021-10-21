@@ -56,15 +56,14 @@
 		<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
 		<div id="bannerindex" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat; background-size: cover;">
 		<div class="container-xxl">
-			<div class="row">
-				<div class="col-md-8">
-					<div class="bannerindexcontent text-left p-4">
-						<h1><?php echo get_the_title(); ?></h1>
-						<span><?php echo the_excerpt(); ?></span>
-						<p><?php the_breadcrumb(); ?></p>
+			<div class="row justify-content-center">
+					<div class="col-md-8 text-center">
+						<div class="bannerindexcontent text-left p-4">
+							<h1 class="header__title"><?php echo get_the_title(); ?></h1>
+						</div>
+						<p class="header__breadcrumb"><?php woocommerce_breadcrumb(); ?></p>
 					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 	<?php } elseif(is_product_category() || (is_product())) {?>
