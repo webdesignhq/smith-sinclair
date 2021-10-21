@@ -17,8 +17,8 @@
 <div id="newsletter">
 	<div class="container-xxl">
 		<div class="col-lg-6 offset-lg-3  flex-row">
-			<span>Wil jij onze nieuwsbrief ontvangen?</span>
-			<p>Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek.</p>
+			<h2><?php the_field('newsletter_title', 'option'); ?></h2>
+			<p><?php the_field('newsletter_description', 'option'); ?></p>
 		</div>
 	</div>
 </div>
@@ -28,12 +28,20 @@
 		<div class="col-lg-10 col-12 mx-auto d-lg-flex d-block flex-row justify-content-lg-between justify-content-start">
 			<div class="col-lg-3 col-12">
 				<span>Hoe kunnen wij jou helpen?</span>
-				<p>Alles wat hier staat is slechts om een indruk te geven van het grafische effect van tekst op deze plek.</p>
+				<p><?php the_field('description', 'option'); ?></p>
 				<div class="socials__container col-6 mt-4 d-flex flex-row justify-content-between">
-					<a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-					<a  href="#"><i class="fa-brands fa-facebook"></i></a>
-					<a  href="#"><i class="fa-brands fa-instagram"></i></a>
+					<?php 
+					$rows = get_field('social_media','option');
+					if( $rows ) {
+						
+						foreach( $rows as $row ) {
+							$image = $row['icon']; ?>
+								<a href="<?php echo wpautop( $row['link'] ); ?>"><img src="<?php wp_get_attachment_image( $image, 'full' ); ?>"></a>
+
+						<?php }
+					} ?>
 				</div>
+				
 
 			</div>
 			<div class="col-lg-3 offset-1 col-12">
@@ -46,8 +54,9 @@
 			</div>
 			<div class="col-lg-3 col-12">
 			<span>Waar vind je ons?</span>
-				<p>Rijnkade 14 <br>
-				1382 GS Weesp</p>
+				<?php the_field('address_details', 'option'); ?>
+				<a href="tel:<?php the_field('phonenumber', 'option'); ?>"><?php the_field('phonenumber', 'option'); ?></a><br>
+				<a href="mailto:<?php the_field('emailaddress', 'option'); ?>"><?php the_field('emailaddress', 'option'); ?></a>
 			</div>
 		</div>
 	</div>

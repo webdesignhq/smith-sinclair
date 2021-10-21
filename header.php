@@ -54,6 +54,7 @@
 </header>
 		<?php if(!is_front_page() && (!is_product_category () && (!is_shop()) && (!is_product()))) { ?>
 		<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+		
 		<div id="bannerindex" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat; background-size: cover;">
 		<div class="container-xxl">
 			<div class="row justify-content-center">
@@ -72,28 +73,29 @@
 			global $wp_query;
 			$cat = $wp_query->get_queried_object();
 			$thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
+	
 			
 			if ( is_product_category() ){
 			$image = wp_get_attachment_url( $thumbnail_id ); 
+			$title = single_term_title( "", false );
 			}else{
-			$image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
-			}
-			
-		?>
-
-
-		<div id="bannerindex" style="background: url('<?php echo $image ?>') no-repeat; background-size: cover; background-position: center;">
-			<div class="container-xxl d-flex flex-column justify-content-center h-100">
-				<div class="row justify-content-center">
-					<div class="col-md-8 text-center">
-						<div class="bannerindexcontent text-left p-4">
-							<h1 class="header__title"><?php echo single_term_title(); ?></h1>
+	
+				$image = get_field('cover_image');
+				$title = get_the_title();
+			} ?>
+				<div id="bannerindex" style="background: url(<?php echo $image ?> ) no-repeat; background-size: cover; background-position: center;">
+					<div class="container-xxl d-flex flex-column justify-content-center h-100">
+						<div class="row justify-content-center">
+							<div class="col-md-8 text-center">
+								<div class="bannerindexcontent text-left p-4">
+									<h1 class="header__title"><?php echo $title ?></h1>
+								</div>
+								<p class="header__breadcrumb"><?php woocommerce_breadcrumb(); ?></p>
+							</div>
 						</div>
-						<p class="header__breadcrumb"><?php woocommerce_breadcrumb(); ?></p>
 					</div>
 				</div>
-			</div>
-		</div>
+
 	<?php } elseif(is_shop()) {?>
 		<div id="bannerindex" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png') no-repeat; background-size: cover;">
 			<div class="container-xxl d-flex flex-column justify-content-center h-100">

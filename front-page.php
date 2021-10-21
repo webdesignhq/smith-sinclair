@@ -56,7 +56,7 @@ get_header();
 					<p class="product-title"><?php the_title() ?></p>
 					<span class="product-price"><?php echo $product->get_price_html();  ?></span>
 					<!-- <?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '" class="btn btn-primary">'?>In winkelwagen</a> -->
-					<a href="<?php echo get_permalink(); ?>" class="btn btn-primary">In winkelwagen</a>
+					<a href="<?php echo get_permalink(); ?>" class="btn btn-primary"><?php the_field('txt-btn', 'option'); ?></a>
 					</div>
 
 				<?php

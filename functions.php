@@ -92,6 +92,35 @@ function woocommerce_header_add_to_cart_custom_fragment( $cart_fragments ) {
 
 add_filter( 'woocommerce_single_product_carousel_options', 'sf_update_woo_flexslider_options' );
 
+/* Optionpage*/
 
-
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Algemene instellingen',
+		'menu_title'	=> 'Algemeen',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Header instellingen',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer instellingen',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Webshop instellingen',
+		'menu_title'	=> 'Webshop',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+}
 

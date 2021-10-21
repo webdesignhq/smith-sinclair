@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 					</div>
 					<div class="product__cta--container row d-flex flex-row mt-5">
-						<div class="col-8 d-flex justify-content-end"><span class="product__price--cta button__add--cart"><?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '">'?>In Winkelwagen</a></span></div>
+						<div class="col-8 d-flex justify-content-end"><span class="product__price--cta button__add--cart"><?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '">'?><?php the_field('txt-cart-btn', 'option'); ?></a></span></div>
 					</div>
 				</div>
 		</div>

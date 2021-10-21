@@ -76,7 +76,7 @@ if ( is_product_category() ){
 			<p class="product-title mt-4"><?php the_title() ?></p>
 			<span class="product-price"><?php echo $product->get_price_html();  ?></span>
 			<!-- <?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '" class="btn btn-primary">'?>In winkelwagen</a> -->
-			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary">Bekijken</a>
+			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary"><?php the_field('txt-cart-btn', 'option'); ?></a>
 		</div>
 
 		<?php endwhile; ?>
@@ -106,7 +106,7 @@ if ( is_product_category() ){
 			<p class="product-title mt-4"><?php the_title() ?></p>
 			<span class="product-price"><?php echo $product->get_price_html();  ?></span>
 			<!-- <?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '" class="btn btn-primary">'?>In winkelwagen</a> -->
-			<a href="<?php echo $product->get_permalink(); ?>" class="btn btn-primary">Bekijken </a>
+			<a href="<?php echo $product->get_permalink(); ?>" class="btn btn-primary"><?php the_field('txt-btn', 'option'); ?> </a>
 		</div>
 	<?php endwhile; ?>
 	<?php
