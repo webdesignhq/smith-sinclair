@@ -115,9 +115,10 @@ header .cart__text {
   font-size: 20px;
   margin-top: 30px;
 }
-
 .woocommerce-breadcrumb a{
   color: var(--primary-color);
+}
+.woocommerce-breadcrumb a:first-child{
   font-weight: bold;
 }
 
@@ -481,6 +482,23 @@ font-weight: 800;
 .archive .product .product-price{
   font-size: 0px!important;
 } 
+.archive .newsletter{
+  max-width: 50%!important;
+  width: 50%!important;
+}
+.archive .newsletter span{
+  color: #fff;
+  text-transform: uppercase;
+}
+.archive .newsletter .head{
+  font-size: 84px;
+  font-weight: 900;
+  line-height: 80px;
+}
+.archive .newsletter .sub__head{
+  font-size: 54px;
+  font-weight: 400;
+}
 /* Single Product */
 .product__image--single{
   width: 100%;

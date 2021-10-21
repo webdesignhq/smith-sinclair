@@ -91,7 +91,7 @@ get_header();
 			 foreach ($all_categories as $cat) { ?>
 					<?php if($cat->category_parent == 0) {
 						$category_id = $cat->term_id; ?>
-						<div class="col-lg-6 col-11 me-lg-2 mx-auto mt-3 category clickable" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png');">
+						<div class="col-lg-6 col-11 me-lg-2 mx-auto mt-3 category clickable" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png'); background-size: cover;">
 							<span><a href="<?php echo get_term_link($cat->slug, 'product_cat') ?>"><?php echo $cat->name ?></a></span>
 						</div>	
 					<?php } ?>				

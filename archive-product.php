@@ -29,8 +29,22 @@ if ( is_product_category() ){
 
 					$args = array(
 						'post_type'      => 'product',
+						'posts_per_page' => 6,
+						'paged' => $paged,
+						'tax_query'     => array(
+							array(
+								'taxonomy'  => 'product_cat',
+								'field'     => 'id', 
+								'terms'     => $cat
+							)
+						)
+					);
+
+					$secondArgs = array(
+						'post_type'      => 'product',
 						'posts_per_page' => 12,
 						'paged' => $paged,
+						'offset' => 6,
 						'tax_query'     => array(
 							array(
 								'taxonomy'  => 'product_cat',
@@ -67,6 +81,36 @@ if ( is_product_category() ){
 
 		<?php endwhile; ?>
 
+		<?php
+		if($cat){
+		?>
+		<div class="product newsletter d-flex flex-column align-center mt-1 clickable justify-content-center" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/gin.jpeg'); background-size: cover;">
+			<span class="head">Meld je aan</span>
+			<span class="sub__head">Voor de nieuwsbrief</span>
+		</div>
+	<?php
+		$secondLoop = new WP_Query( $secondArgs );
+		while ( $secondLoop->have_posts() ) : $secondLoop->the_post();
+				global $product;
+				$productID = $product->get_id();
+				$productVar = wc_get_product( $productID );
+				$checkout_url = wc_get_checkout_url(); 
+
+		?>
+
+		<div class="product d-flex flex-column mt-1 clickable">
+			<a href="#" class="product__favorites--button"><i class="fa-regular fa-heart" aria-hidden="true"></i></a>
+			<img style="width:100%;" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image mx-auto" />
+			<p class="product-title mt-4"><?php the_title() ?></p>
+			<span class="product-price"><?php echo $product->get_price_html();  ?></span>
+			<!-- <?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '" class="btn btn-primary">'?>In winkelwagen</a> -->
+			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary">In winkelwagen</a>
+		</div>
+	<?php endwhile; ?>
+	<?php
+		}else{}
+		?>
+	
 		 <?php else: ?>
 		<p>Sorry, er zijn geen producten gevonden<p>
 			<?php endif ?>
