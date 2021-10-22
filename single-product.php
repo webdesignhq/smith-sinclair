@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$productID = $product->get_id();
 				$productVar = wc_get_product( $productID );
 				$result = wc_get_checkout_url(); 
-				$checkout_url = wc_get_checkout_url(); 
+				$checkout_url = wc_get_cart_url(); 
 			?>
 				<div class="col-lg-6 col-12 product__images--container text-center px-5">
 					<!-- <img src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image product__image--single mx-auto" /> -->
