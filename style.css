@@ -200,8 +200,13 @@ header .cart__text {
 }
 
 .main-navigation li:hover > a {
-	color: var(--primary-color);
+	color: var(--white-color);
 }
+
+.main-navigation li:hover{
+  background-color: var(--primary-color);
+}
+
 .main-navigation a {
 	display: block;
 	text-decoration: none;
