@@ -411,10 +411,6 @@ font-weight: 800;
 
 
 /* Category Section */
-#categories {
-  margin-bottom: 111px;
-}
-
 #categories .headline .showAll{
   padding:15px 25px;
   background-color: var(--primary-color);
@@ -494,6 +490,31 @@ font-weight: 800;
   color: var(--primary-color);
 }
 
+#instagram{
+  margin-bottom: 111px;
+}
+
+#categories #instagram div{
+  margin: 0;
+}
+
+.sbi_photo{
+  height: 350px!important;
+  object-fit: cover;
+}
+
+#sbi_images, #sb_instagram, #instagram{
+  height: 360px!important;
+  overflow-y: hidden;
+}
+
+#sb_instagram{
+  padding: 0!important;
+}
+
+#sbi_load{
+  display: none;
+}
 /* Featured Section */
 #featured  {
 	padding: 100px 0;

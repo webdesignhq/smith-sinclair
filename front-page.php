@@ -113,7 +113,9 @@ get_header();
 	</div>
 </div>
 
-<div id="instagram"></div>
+<div id="instagram" class="col-12">
+	<?php echo do_shortcode('[instagram-feed]'); ?>
+</div>
 
 <div id="about" class="col-5 mx-auto text-center">
 	<p>Sinds begin 2021 is Smith & Sinclair in Nederland gevestigd en wordt het merk wereldwijd door diverse distributie partners zowel online als in de retail vertegenwoordigd. Onze missie "Make adult more fun". Met unieke combinaties van alcohol en zoetwaren brengen we het beste uit onze kindertijd samen met de guilty pleasures uit het volwassen leven. It's about sophistication, not intoxication!</p>						

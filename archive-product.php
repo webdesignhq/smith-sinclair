@@ -52,7 +52,7 @@ if ( is_product_category() ){
 </div>
 </div>
 <!-- <div id="response"> -->
-	<div id="products" class= "archive">
+	<div id="products" class= "archive mt-4">
 		<div id="response" class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
 		<?php if (have_posts()) : ?>     
 		<?php
