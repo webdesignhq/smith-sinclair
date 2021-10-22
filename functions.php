@@ -218,7 +218,7 @@ function woo_cart_but() {
   
         ?>
         <a class="menu-item cart-contents" href="<?php echo $cart_url; ?>" title="My Basket">
-		<i class="fas fa-shopping-basket"></i>
+			<i class="fas fa-shopping-basket"></i>
 	    <?php
         if ( $cart_count > 0 ) {
        ?>
@@ -246,6 +246,7 @@ function woo_cart_but_count( $fragments ) {
     
     ?>
     <a class="cart-contents menu-item" href="<?php echo $cart_url; ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+	<i class="fas fa-shopping-basket"></i>
 	<?php
     if ( $cart_count > 0 ) {
         ?>

@@ -938,6 +938,24 @@ width: 100%;
 .woocommerce-message::before{
   color: var(--white-color);
 }
+.woocommerce-error{
+  background-color: #b81c23;
+  color: var(--white-color);
+}
+
+.woocommerce-error::before{
+  color: var(--white-color);
+}
+
+.woocommerce-info{
+  background-color: #3d9cd2;
+  color: var(--white-color);
+}
+
+.woocommerce-info::before{
+  color: var(--white-color);
+}
+
 
 @media screen and (max-width: 768px){
 	/* Mobile Menu */

@@ -53,7 +53,6 @@
 		<div class="shop__controls col-lg-2 col-1 text-align-right d-none d-lg-inline-flex justify-content-lg-end align-items-center justify-content-center mt-lg-0 mt-0">
 			<div id="weglot_here"></div>
 			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="mx-lg-3 mx-2"><i class="fas fa-user"></i></a>
-			<!-- <a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Winkelwagen' ); ?>" class="mx-lg-3 mx-2"><i class="fas fa-shopping-basket"></i></a> -->
 			<?php echo do_shortcode("[woo_cart_but]"); ?>
 		</div>
 	</div>
