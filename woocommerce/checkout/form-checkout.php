@@ -39,12 +39,11 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<fieldset>
 			<div class="container-xxl mx-auto">
 				<form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
-
 					<?php if ( $checkout->get_checkout_fields() ) : ?>
 
 						<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-						<div class="col-set" id="customer_details">
+						<div class="col-set col-12 d-flex flex-row" id="customer_details">
 							<div class="col-6">
 								<?php do_action( 'woocommerce_checkout_billing' ); ?>
 							</div>
@@ -68,7 +67,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 					</div>
 
 					<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-
 				</form>
 			</div>
 			<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
