@@ -18,6 +18,9 @@ if ( is_product_category() ){
 
 	
 ?>
+<div class="container-xxl p-0">
+	<a class="btn btn-primary" id="toggleFilter" style="transition: all .3s ease-in-out;">Filters</a>
+</div>
 
 <div id="filters">
 	<div class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
@@ -47,9 +50,9 @@ if ( is_product_category() ){
 
 </div>
 </div>
-<div id="response">
+<!-- <div id="response"> -->
 	<div id="products" class= "archive">
-		<div class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
+		<div id="response" class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
 		<?php if (have_posts()) : ?>     
 		<?php
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -155,7 +158,7 @@ if ( is_product_category() ){
   
 		</div>
 	</div>
-</div>
+<!-- </div> -->
 		<div class="category__information--container--title col-6 mx-auto">
 			<div class="col-12"><h3 class=""><?php echo single_term_title(); ?></h3></div>
 		</div>
