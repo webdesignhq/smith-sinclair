@@ -30,8 +30,8 @@
 <body>
 
 <header class="container-fluid sticky-top">
-	<div class="topheader d-flex flex-row justify-content-between align-items-right">
-			Klantenservice | Registreren | Inloggen
+	<div class="topheader d-flex flex-row">
+				<p>Klantenservice | Registreren | Inloggen</p>
 	</div>
 	<div class="header d-flex flex-row justify-content-between align-items-center">
 		<div class="shop__logo col-lg-2 col-2">
