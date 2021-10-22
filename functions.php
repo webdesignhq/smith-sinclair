@@ -150,10 +150,17 @@ function filter_function(){
 	$query = new WP_Query( $args );
 	
 	if( $query->have_posts() ) :
-		while( $query->have_posts() ): $query->the_post(); ?>
-			<div class="product d-flex flex-column mt-1 clickable justify-content-between">
-			<p class="product-title mt-4">		<?php echo $query->post->post_title; ?></p>
-			<?php var_dump($query->post); ?>
+		while( $query->have_posts() ): $query->the_post(); 
+		global $product;
+		?>
+		<div class="product d-flex flex-column mt-1 clickable justify-content-between">
+			<i class="fa-regular fa-heart product__favorites--button" aria-hidden="true"></i>
+			<img style="width:100%;" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image mx-auto" />
+			<p class="product-title mt-4"><?php the_title() ?></p>
+			<span class="product-price"><?php echo $product->get_price_html();  ?></span>
+			<!-- <?php echo '<a href="'. $checkout_url.'?add-to-cart=' .$productID. '" class="btn btn-primary">'?>In winkelwagen</a> -->
+			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary"><?php the_field('txt-btn', 'option'); ?></a>
+		</div>
 		</div>
 
 		<?php endwhile;

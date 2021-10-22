@@ -34,6 +34,10 @@ $().ready(()=> {
     $(".menu-close").click(function(e) {
         $(".mobile__menu__overlay--container").css('left', '-100%');
     });
+
+    $("#toggleFilter").click(function(e) {
+            $("#filters").toggleClass('activeFilter');
+    })
 	
 	$('#filter').submit(function(){
 		var filter = $('#filter');
