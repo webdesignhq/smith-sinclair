@@ -508,7 +508,7 @@ font-weight: 800;
 /* Archive */
 #filters{
   width: 100%;
-  height: 200px;
+  height: 250px;
   max-height: 0;
   overflow: hidden;
   transition: all .3s ease-in-out;
@@ -526,7 +526,7 @@ font-weight: 800;
 }
 
 .activeFilter{
-  max-height: 200px!important;
+  max-height: 250px!important;
   transition: all .3s ease-in-out;
   padding-top: 50px!important;
 }

@@ -41,9 +41,11 @@ if ( is_product_category() ){
 				</label>
 			</div>
 			<div class="col-3 offset-1">
-				<button class="btn btn-primary">Filters toepassen</button>
 				<input type="hidden" name="action" value="myfilter">
 			</div>	
+		</div>
+		<div class="col-2">
+			<button class="btn btn-primary">Filters toepassen</button>
 		</div>
 	</form>
 
@@ -154,9 +156,15 @@ if ( is_product_category() ){
 		</div>
 	</div>
 <!-- </div> -->
+<?php if($cat){?>
 		<div class="category__information--container--title col-6 mx-auto">
 			<div class="col-12"><h3 class=""><?php echo single_term_title(); ?></h3></div>
 		</div>
+<?php } else{?>
+		<div class="category__information--container--title col-6 mx-auto">
+			<div class="col-12"><h3 class="">Winkel</h3></div>
+		</div>
+		<?php } ?>
 		<div class="category__information--container mt-4 pb-5 col-6 mx-auto">
 			<div class="col-12 pe-5">
 				<?php echo the_archive_description(); ?>
