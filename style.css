@@ -94,9 +94,27 @@ header {
   background-color: var(--white-color);
 }
 
+.shop__controls{
+  position: relative;
+}
+
 .shop__controls i{
   color: var(--darkgrey-color);
   font-size: 24px;
+}
+
+.shop__controls .cart-contents-count{
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  top: -5px;
+  right: -7px;
+  border-radius: 100%;
+  font-size: 12px;
+  height: 20px;
+  width: 20px;
+  color: var(--white-color);
+  background-color: var(--secondary-color);
 }
 
 header .search input {
