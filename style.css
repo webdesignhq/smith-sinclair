@@ -849,6 +849,22 @@ width: 100%;
   margin-bottom: 25px;
 }
 
+#usps ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+#usps ul li{
+  display: inline-block;
+  *display:inline;
+  padding: 15px;
+  font-size: 14px;
+}
+
+#usps ul li img{
+  margin-right: 15px;
+}
+
 @media screen and (max-width: 768px){
 	/* Mobile Menu */
 	.sub-menu

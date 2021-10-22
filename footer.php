@@ -14,6 +14,16 @@
 ?>
 
 <footer>
+<div id="usps">
+	<div class="col-8 offset-2">
+		<ul class="d-flex flex-row justify-content-between">
+			<li><img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:20px; height: auto;">GRATIS VERZENDING VANAF 37,50</li>
+			<li><img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:20px; height: auto;">UNIEK CADEAU VOOR HEM OF HAAR</li>
+			<li><img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:20px; height: auto;">VOOR 16:00 BESTELD MORGEN IN HUIS</li>
+			<li><img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:20px; height: auto;">VEILIG BETALEN</li>
+		</ul>
+	</div>
+</div>
 <div id="newsletter">
 	<div class="container-xxl">
 		<div class="col-lg-6 offset-lg-3  flex-row">
