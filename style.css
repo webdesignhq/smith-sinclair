@@ -699,6 +699,118 @@ width: 100%;
   background-repeat: no-repeat;
 }
 
+/* Cart */
+
+.woocommerce table.shop_table {
+	background-color: #f9f9f9;
+    border: none;
+}
+
+.progresses {
+    display: flex;
+    align-items: center
+}
+
+#form {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+  
+#form fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+  
+.finish {
+    text-align: center
+}
+  
+#form fieldset:not(:first-of-type) {
+    display: none
+}
+  
+  
+.text {
+    color: #2F8D46;
+    font-weight: normal
+}
+  
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: var(--primary-color);
+}
+  
+#progressbar .active {
+    color: var(--secondary-color);
+}
+  
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 33.3%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+  
+#progressbar #step1:before {
+    content: "1"
+}
+  
+#progressbar #step2:before {
+    content: "2"
+}
+  
+#progressbar #step3:before {
+    content: "3"
+}
+  
+  
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: var(--white-color);
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+  
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+  
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: var(--secondary-color);
+}
+  
+.progress {
+    height: 20px
+}
+  
+.progress-bar {
+    background-color: #f1f1f1;
+}
+
 /* Footer */
 #footer{
 	background-color: var(--primary-color);

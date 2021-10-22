@@ -18,6 +18,19 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
+<div class="container-xxl pt-5 pb-5">
+<div class="row">
+    <form id="form">
+		<ul id="progressbar">
+			<li id="step1"><strong>Winkelwagen</strong></li>
+			<li id="step2"><strong>Afrekenen</strong></li>
+			<li class="active" id="step3"><strong>Bevestiging</strong></li>
+		</ul>
+		<div class="progress">
+			<div class="progress-bar"></div>
+		</div> <br>
+		<fieldset>
+
 <div class="woocommerce-order">
 
 	<?php
@@ -85,4 +98,9 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php endif; ?>
 
+</div>
+
+</fieldset>
+</form>
+</div>
 </div>
