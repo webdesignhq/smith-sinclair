@@ -30,6 +30,9 @@
 <body>
 
 <header class="container-fluid sticky-top">
+	<div class="topheader d-flex flex-row justify-content-between align-items-right">
+			Klantenservice | Registreren | Inloggen
+	</div>
 	<div class="header d-flex flex-row justify-content-between align-items-center">
 		<div class="shop__logo col-lg-2 col-2">
 			<?php if ( function_exists( 'the_custom_logo' ) ) {
@@ -46,7 +49,8 @@
 			<?php get_search_form(); ?>
 		</div>
 		<div class="shop__controls col-lg-2 col-1 text-align-right d-none d-lg-inline-flex justify-content-lg-end justify-content-center mt-lg-0 mt-0">
-			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="mx-lg-3 mx-2 pt-3"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/user.svg" /></a>
+			<div id="weglot_here"></div>
+			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="mx-lg-3 mx-2 pt-3"><i class="fas fa-user"></i></a>
 			<a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Winkelwagen' ); ?>" class="mx-lg-3 mx-2 cart__icon d-inline-flex"><i class="fas fa-shopping-basket"></i></a>
 		</div>
 	</div>
