@@ -53,7 +53,7 @@
 
 
 </header>
-		<?php if(!is_front_page() && (!is_product_category () && (!is_shop()) && (!is_product()))) { ?>
+		<?php if(!is_front_page() && (!is_product_category () && (!is_shop()) && (!is_product() && (!is_cart() && (!is_checkout()))))) { ?>
 		<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
 		
 		<div id="bannerindex" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat; background-size: cover;">
