@@ -31,7 +31,7 @@ get_header();
 <div id="products">
 	<div class="container-xxl">
 			<div class="col-12 text-center">
-				<h2>Nu populair</h2>
+				<h2 class="my-5">Nu populair</h2>
 			</div>
 
 			<div class="col-12 d-lg-flex d-block flex-row">
@@ -71,7 +71,7 @@ get_header();
 <!-- Categories Section -->
 <div id="categories">
 	<div class="container-xxl mx-auto">
-		<h2>Voor wie zoek je wat?</h2>
+		<h2 class="my-5">Voor wie zoek je wat?</h2>
 		<div class="categories d-lg-flex col-12 d-block flex-row justify-content-between align-items-end">
 
 			<?php
@@ -106,14 +106,20 @@ get_header();
 	</div>
 </div>
 
+<div id="instagram"></div>
+
+<div id="about" class="col-5 mx-auto text-center">
+	<p>Sinds begin 2021 is Smith & Sinclair in Nederland gevestigd en wordt het merk wereldwijd door diverse distributie partners zowel online als in de retail vertegenwoordigd. Onze missie "Make adult more fun". Met unieke combinaties van alcohol en zoetwaren brengen we het beste uit onze kindertijd samen met de guilty pleasures uit het volwassen leven. It's about sophistication, not intoxication!</p>						
+</div>
+
 <!-- Featured Section -->
 <div id="featured">
 	<div class="container-xxl">
-		<div class="d-lg-flex d-block flex-row align-items-center">
+		<div class="d-lg-flex d-block flex-row align-items-center" id="featured__split">
 			 <div class="featured-image col-lg-6 col-12">
 					<img src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png')">
 				</div>
-				<div class="col-lg-5 col-12 offset-lg-1 offset-0">
+			<div class="col-lg-6 h-100 col-12 offset-0" id="featured__text">
 					<h3 class="featured-title">Nieuw! Naughty or Nice</h3>
 					<div class="featured-description">
 						<p>Nog nooit was het zo makkelijk om in de kerstsfeer te komen, met de Naughty or Nice giftboxes. <br>Van Countdown Calendar tot kerstboom ornament.
