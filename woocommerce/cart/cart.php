@@ -19,16 +19,13 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
 <div class="container-xxl pt-5 pb-5">
-<div class="row">
-    <form id="form">
+<div id="form">
+	<div class="row">
 		<ul id="progressbar">
 			<li class="active" id="step1"><strong>Winkelwagen</strong></li>
 			<li id="step2"><strong>Afrekenen</strong></li>
 			<li id="step3"><strong>Bevestiging</strong></li>
 		</ul>
-		<div class="progress">
-			<div class="progress-bar"></div>
-		</div> <br>
 		<fieldset>
 		<div class="container-xxl pt-5 pb-5">
 			<div class="row">
@@ -186,12 +183,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 					do_action( 'woocommerce_cart_collaterals' );
 				?>
 			</div>
-						</div>
-									</div>
+				</div>
+			</div>
     </fieldset>
-
-</form>
-
+</div>
 </div>
 </div>
 
