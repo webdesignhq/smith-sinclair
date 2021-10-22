@@ -34,4 +34,22 @@ $().ready(()=> {
     $(".menu-close").click(function(e) {
         $(".mobile__menu__overlay--container").css('left', '-100%');
     });
+	
+	$('#filter').submit(function(){
+		var filter = $('#filter');
+		$.ajax({
+			url:filter.attr('action'),
+			data:filter.serialize(), // form data
+			type:filter.attr('method'), // POST
+			beforeSend:function(xhr){
+				filter.find('button').text('Processing...'); // changing the button label
+			},
+			success:function(data){
+				filter.find('button').text('Filter toepassen'); // changing the button label back
+				$('#response').html(data); // insert data
+			}
+		});
+		return false;
+	});
+	
 });
