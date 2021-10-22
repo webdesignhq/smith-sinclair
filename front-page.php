@@ -96,9 +96,12 @@ get_header();
 						$thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
 						$image = wp_get_attachment_url( $thumbnail_id ); ?>
 						
-						<div class="col-lg-6 p-5 col-11 me-lg-2 mx-auto mt-3 category clickable" style="background: url('<?php echo $image ?>'); background-size: cover;">
+						<div class="col-lg-6 col-11 me-lg-2 mx-auto mt-3 category clickable" style="background: url('<?php echo $image ?>'); background-size: cover;">
+						<div class="overlay d-flex flex-column justify-content-end align-center">
 							<div class="category-title"><a href="<?php echo get_term_link($cat->slug, 'product_cat') ?>"><?php echo $cat->name ?></a></div>
 							<p class="category-description"><?php echo $cat->description ?></p>
+							<span class="btn btn-primary"><?php the_field('txt-cat', 'option'); ?></span>
+						</div>
 						</div>	
 					<?php } ?>				
 			<?php } ?>
