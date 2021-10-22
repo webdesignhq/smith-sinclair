@@ -768,9 +768,49 @@ width: 100%;
 
 /* Cart */
 
+.woocommerce-cart-form thead{
+  display: none;
+}
+
+.woocommerce-cart-form tr{
+  background: transparent;
+}
+
 .woocommerce table.shop_table {
-	background-color: #f9f9f9;
+	background-color: transparent;
     border: none;
+}
+
+.woocommerce table.shop_table td{
+  border: none;
+  border-bottom: solid 1px var(--grey-color);
+}
+
+.woocommerce-cart-form__cart-item{
+  /* margin-top: 15px!important; */
+}
+
+.woocommerce-cart-form__cart-item img{
+  max-width: 100px;
+}
+
+.woocommerce-cart-form__cart-item input[type='number']{
+  background-color: #eee;
+    border: none;
+    color: #000;
+}
+
+.wc-proceed-to-checkout{
+  text-align: left;
+  padding-left: 12px;
+}
+
+.calculated_shipping{
+  margin-top: 20px;
+}
+
+.coupon .input-text{
+  width: unset!important;
 }
 
 .progresses {
