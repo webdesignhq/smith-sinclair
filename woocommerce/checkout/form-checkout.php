@@ -28,7 +28,19 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 
 ?>
-<div class="container col-10 mx-auto">
+<div class="container-xxl pt-5 pb-5">
+<div class="row">
+    <form id="form">
+		<ul id="progressbar">
+			<li id="step1"><strong>Winkelwagen</strong></li>
+			<li class="active" id="step2"><strong>Afrekenen</strong></li>
+			<li id="step3"><strong>Bevestiging</strong></li>
+		</ul>
+		<div class="progress">
+			<div class="progress-bar"></div>
+		</div> <br>
+		<fieldset>
+<div class="container-xxl col-12 mx-auto">
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
@@ -51,7 +63,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	
 	<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 	
-	<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
 	
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
@@ -64,3 +75,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 </form>
 </div>
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+</fieldset>
+</form>
+</div>
+</div>
