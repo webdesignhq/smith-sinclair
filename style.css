@@ -521,6 +521,10 @@ font-weight: 800;
   padding: 0px;
 }
 
+.filter__col{
+  border-right: solid 1px var(--darkgrey-color);
+}
+
 #toggleFilter{
   max-width: 10%!important;
   margin-top: -30px;
@@ -870,9 +874,14 @@ width: 100%;
   margin-bottom: 25px;
 }
 
+#usps{
+  background-color: var(--grey-color);
+}
+
 #usps ul{
   list-style-type: none;
   padding: 0;
+  margin-bottom: 0;
 }
 
 #usps ul li{
@@ -884,6 +893,15 @@ width: 100%;
 
 #usps ul li img{
   margin-right: 15px;
+}
+
+/* notifications */
+.woocommerce-message{
+  background-color: #8fae1b;
+  color: var(--white-color);
+}
+.woocommerce-message::before{
+  color: var(--white-color);
 }
 
 @media screen and (max-width: 768px){

@@ -24,28 +24,27 @@ if ( is_product_category() ){
 
 <div id="filters">
 	<div class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
-	<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
-		<?php
-			if( $terms = get_terms( array( 'taxonomy' => 'product_cat', 'orderby' => 'name' ) ) ) : 
-		
-				echo '<select name="categoryfilter"><option value="">Select category...</option>';
-				foreach ( $terms as $term ) :
-					echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option\
-
-				endforeach;
-				echo '</select>';
-			endif;
-		?>
-		<input type="text" name="price_min" placeholder="Min price" />
-		<input type="text" name="price_max" placeholder="Max price" />
-		<label>
-			<input type="radio" name="date" value="ASC" /> Datum: Asc
-		</label>
-		<label>
-			<input type="radio" name="date" value="DESC" selected="selected" /> Datum: Desc
-		</label>
-		<button>Filters toepassen</button>
-		<input type="hidden" name="action" value="myfilter">
+	<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter" class="col-12">
+		<div class="d-flex flex-row col-12">
+			<div class="col-3">
+				<h2>Bedrag</h2>
+				<input type="text" name="price_min" placeholder="Min price" />
+				<input type="text" name="price_max" placeholder="Max price" />
+			</div>
+			<div class="col-3 offset-1 d-flex flex-column">
+				<h2>Sorteren</h2>
+				<label>
+					<input type="radio" name="date" value="ASC" /> Datum: Asc
+				</label>
+				<label>
+					<input type="radio" name="date" value="DESC" selected="selected" /> Datum: Desc
+				</label>
+			</div>
+			<div class="col-3 offset-1">
+				<button class="btn btn-primary">Filters toepassen</button>
+				<input type="hidden" name="action" value="myfilter">
+			</div>	
+		</div>
 	</form>
 
 </div>
@@ -113,9 +112,6 @@ if ( is_product_category() ){
 
 		<?php endwhile; ?>
 
-		<?php
-		if($cat){
-		?>
 		<div class="product newsletter d-flex flex-column align-center mt-1 justify-content-center" style="background: url('<?php bloginfo('template_directory'); ?>/assets/img/gin.jpeg'); background-size: cover;">
 			<div class="overlay d-flex flex-column justify-content-center align-center">
 				<span class="head">Meld je aan</span>
@@ -142,7 +138,6 @@ if ( is_product_category() ){
 		</div>
 	<?php endwhile; ?>
 	<?php
-		}else{}
 		?>
 
 				<nav class="mx-auto pagination">
