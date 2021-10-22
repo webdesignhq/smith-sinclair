@@ -92,6 +92,80 @@ function woocommerce_header_add_to_cart_custom_fragment( $cart_fragments ) {
 
 add_filter( 'woocommerce_single_product_carousel_options', 'sf_update_woo_flexslider_options' );
 
+
+add_action('wp_ajax_myfilter', 'filter_function'); // wp_ajax_{ACTION HERE} 
+add_action('wp_ajax_nopriv_myfilter', 'filter_function');
+
+function filter_function(){
+	$args = array(
+		'post_type' => 'product',
+		'orderby' => 'date', // we will sort posts by date
+		'order'	=> $_POST['date'] // ASC or DESC
+	);
+ 
+	// for taxonomies / categories
+	if( isset( $_POST['categoryfilter'] ) )
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'product_cat',
+				'field' => 'id',
+				'terms' => $_POST['categoryfilter']
+			)
+		);
+ 
+	// create $args['meta_query'] array if one of the following fields is filled
+	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'])
+		$args['meta_query'] = array( 'relation'=>'AND' ); // AND means that all conditions of meta_query should be true
+ 
+	// if both minimum price and maximum price are specified we will use BETWEEN comparison
+	if( isset( $_POST['price_min'] ) && $_POST['price_min'] && isset( $_POST['price_max'] ) && $_POST['price_max'] ) {
+		$args['meta_query'][] = array(
+			'key' => '_price',
+			'value' => array( $_POST['price_min'], $_POST['price_max'] ),
+			'type' => 'numeric',
+			'compare' => 'between'
+		);
+	} else {
+		// if only min price is set
+		if( isset( $_POST['price_min'] ) && $_POST['price_min'] )
+			$args['meta_query'][] = array(
+				'key' => '_price',
+				'value' => $_POST['price_min'],
+				'type' => 'numeric',
+				'compare' => '>'
+			);
+ 
+		// if only max price is set
+		if( isset( $_POST['price_max'] ) && $_POST['price_max'] )
+			$args['meta_query'][] = array(
+				'key' => '_price',
+				'value' => $_POST['price_max'],
+				'type' => 'numeric',
+				'compare' => '<'
+			);
+	}
+ 
+	// if you want to use multiple checkboxed, just duplicate the above 5 lines for each checkbox
+ 
+	$query = new WP_Query( $args );
+	
+	if( $query->have_posts() ) :
+		while( $query->have_posts() ): $query->the_post(); ?>
+			<div class="product d-flex flex-column mt-1 clickable justify-content-between">
+			<p class="product-title mt-4">		<?php echo $query->post->post_title; ?></p>
+			<?php var_dump($query->post); ?>
+		</div>
+
+		<?php endwhile;
+		wp_reset_postdata();
+	else :
+		echo 'Geen producten gevonden';
+	endif;
+	
+	die();
+}
+
+
 /* Optionpage*/
 
 if( function_exists('acf_add_options_page') ) {

@@ -18,9 +18,38 @@ if ( is_product_category() ){
 
 	
 ?>
-<div id="products" class= "archive">
-	<div class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
 
+<div id="filters">
+	<div class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
+	<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+		<?php
+			if( $terms = get_terms( array( 'taxonomy' => 'product_cat', 'orderby' => 'name' ) ) ) : 
+		
+				echo '<select name="categoryfilter"><option value="">Select category...</option>';
+				foreach ( $terms as $term ) :
+					echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option\
+
+				endforeach;
+				echo '</select>';
+			endif;
+		?>
+		<input type="text" name="price_min" placeholder="Min price" />
+		<input type="text" name="price_max" placeholder="Max price" />
+		<label>
+			<input type="radio" name="date" value="ASC" /> Datum: Asc
+		</label>
+		<label>
+			<input type="radio" name="date" value="DESC" selected="selected" /> Datum: Desc
+		</label>
+		<button>Filters toepassen</button>
+		<input type="hidden" name="action" value="myfilter">
+	</form>
+
+</div>
+</div>
+<div id="response">
+	<div id="products" class= "archive">
+		<div class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
 		<?php if (have_posts()) : ?>     
 		<?php
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -124,6 +153,7 @@ if ( is_product_category() ){
 		<p>Sorry, er zijn geen producten gevonden<p>
 			<?php endif ?>
   
+		</div>
 	</div>
 </div>
 		<div class="category__information--container--title col-6 mx-auto">
