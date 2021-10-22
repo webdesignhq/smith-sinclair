@@ -23,6 +23,7 @@ get_header();
 			</div>
 		</div>
 	</div>
+	<div class="overlay"></div>
 </div>
 
 
