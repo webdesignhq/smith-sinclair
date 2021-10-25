@@ -21,11 +21,11 @@
 		$usp_rows = get_field('usps', 'option');
 		if($usp_rows)
 		{
-			echo '<ul>';
+			echo '<ul class="d-flex flex-row justify-content-between">';
 
 			foreach($usp_rows as $row)
 			{
-				echo '<li><img src="'. $row['usp-img'] .'" alt="" style="width:20px; height: auto;">' . $row['usp'] . '</li>';
+				echo '<li class="text-uppercase"><img src="'. $row['usp-img'] .'" alt="" style="width:20px; height: auto;">' . $row['usp'] . '</li>';
 			}
 
 			echo '</ul>';
@@ -81,7 +81,11 @@
 			</div>
 		</div>
 	</div>
+	<img src="<?php bloginfo('template_directory'); ?>/assets/img/footer_gummy.png" alt="" style="width:330px; height: 330px; object-fit: cover; position: absolute; bottom: -150px; right: -150px;">
 </div>	
+<div class="col-8 offset-2 text-center py-2"> © Copryright Smith & Sinclair - Webdesign: HQ Online</div>
+
+
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>

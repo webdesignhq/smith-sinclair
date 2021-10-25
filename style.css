@@ -24,11 +24,11 @@ html, body, p{
   padding: 0;
   margin: 0;
   font-size: 16px;
-  /* font-family: 'Roboto', sans-serif; */
 }
 
 body{
 	overflow-x: hidden;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5 {
@@ -790,8 +790,19 @@ width: 100%;
   border-bottom: solid 1px var(--grey-color);
 }
 
-.woocommerce-cart-form__cart-item{
-  /* margin-top: 15px!important; */
+.woocommerce-cart-form .button[name="apply_coupon"]{
+  height: 44px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-family: var(--primary-font);
+  font-weight: 400;
+  transition: all .3s ease-in-out;
+  border-radius: 0;
+}
+
+.woocommerce-cart-form .button[name="apply_coupon"]:hover{
+  background-color: var(--grey-color);
+  color: var(--primary-color);
 }
 
 .woocommerce-cart-form__cart-item img{
@@ -801,12 +812,16 @@ width: 100%;
 .woocommerce-cart-form__cart-item input[type='number']{
   background-color: #eee;
     border: none;
-    color: #000;
+    color: var(--primary-color);
 }
 
 .wc-proceed-to-checkout{
   text-align: left;
   padding-left: 12px;
+}
+
+.wc-proceed-to-checkout .btn:hover{
+  background-color: var(--grey-color);
 }
 
 .calculated_shipping{
@@ -928,13 +943,28 @@ width: 100%;
 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
   margin-top: 15px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
   font-size: 18px;
   font-family: var(--primary-font);
   font-weight: 400;
   padding: 25px;
   border-radius: 0;
+  transition: all .3s ease-in-out ;
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt:hover, .woocommerce input.button.alt{
+  background-color: var(--grey-color)!important;
+  color: var(--primary-color)!important;
+}
+
+.woocommerce-billing-fields,.woocommerce-shipping-fields, .woocommerce-additional-fields{
+  text-align: left;
+}
+
+.woocommerce-billing-fields h3, .woocommerce-shipping-fields h3, .woocommerce-additional-fields h3{
+  text-align: left;
+  font-size: 24px;
 }
 
 /* Footer */

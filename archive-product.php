@@ -16,6 +16,11 @@ if ( is_product_category() ){
     $image = wp_get_attachment_url( $thumbnail_id ); 
 }
 
+if(is_search()){
+	global $wp_query;
+	$wp_query->is_search();
+}
+
 	
 ?>
 <div class="container-xxl p-0">
@@ -86,12 +91,20 @@ if ( is_product_category() ){
 							)
 						)
 					);
+				}elseif(is_search()){
+					$s=get_search_query();
+					$args = array(
+									's' =>$s,
+									'post_type'      => 'product',
+									'posts_per_page' => 12,
+									'paged' => $paged
+								);
 				}else{
 					$args = array(
 						'post_type'      => 'product',
 						'posts_per_page' => 12,
 						'paged' => $paged
-);}
+				);}
 
 			$loop = new WP_Query( $args );
 
