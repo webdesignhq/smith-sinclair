@@ -65,7 +65,7 @@
 				
 
 			</div>
-			<div class="col-lg-3 offset-1 col-12">
+			<div class="col-lg-3 col-12">
 				<span>Klantenservice</span>
 				<?php wp_nav_menu( array( 'theme_location' => 'footer_customerservice' ) ); ?>
 			</div>

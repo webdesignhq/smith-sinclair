@@ -8,29 +8,33 @@ get_header();
 <div id="banner">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-4 px-0 px-lg-2">
 				<img style="width:100%;" src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png"/>
+				<div class="banner-content d-lg-none d-block">
+					<h1>Wij zijn Smith <br> & sinclair</h1>
+					<span>En onze missie is om volwassen zijn leuker te maken</span>
+				</div>
 			</div>
-			<div class="col-lg-4 banner-middle">
+			<div class="col-lg-4 banner-middle d-lg-block d-none">
 				<img style="width:100%;" src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-2.png"/>
 				<div class="banner-content">
 					<h1>Wij zijn Smith <br> & sinclair</h1>
 					<span>En onze missie is om volwassen zijn leuker te maken</span>
 				</div>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-4 d-lg-block d-none">
 				<img style="width:100%;"  src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-3.png"/>
 			</div>
 		</div>
 	</div>
-	<div class="overlay"></div>
+	<div class="overlay d-lg-block"></div>
 </div>
 
 
 <!-- Products Section -->
 <div id="products">
 	<div class="container-xxl">
-			<div class="col-12 text-center">
+			<div class="col-12 text-lg-center text-left">
 				<h2 class="my-5">Nu populair</h2>
 			</div>
 
@@ -71,9 +75,9 @@ get_header();
 <!-- Categories Section -->
 <div id="categories">
 	<div class="container-xxl mx-auto">
-		<div class="headline col-12 d-flex flex-row justify-content-between align-items-center">
-			<h2 class="my-5">Voor wie zoek je wat?</h2>
-			<a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="showAll my-4">Bekijk alles</a>
+		<div class="headline col-12 d-flex flex-row justify-content-lg-between justify-content-center align-items-center">
+			<h2 class="my-5 ">Voor wie zoek je wat?</h2>
+			<a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="showAll my-4 d-lg-block d-none">Bekijk alles</a>
 		</div>
 		
 		<div class="categories d-lg-flex col-12 d-block flex-row justify-content-between align-items-end">
@@ -100,7 +104,7 @@ get_header();
 						$thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
 						$image = wp_get_attachment_url( $thumbnail_id ); ?>
 						
-						<div class="col-lg-6 col-11 me-lg-2 mx-auto category clickable" style="background: url('<?php echo $image ?>'); background-size: cover;">
+						<div class="col-lg-6 col-12 me-lg-2 mx-auto category clickable" style="background: url('<?php echo $image ?>'); background-size: cover;">
 						<div class="overlay d-flex flex-column justify-content-end align-center">
 							<div class="category-title"><a href="<?php echo get_term_link($cat->slug, 'product_cat') ?>"><?php echo $cat->name ?></a></div>
 							<p class="category-description"><?php echo $cat->description ?></p>
@@ -117,7 +121,7 @@ get_header();
 	<?php echo do_shortcode('[instagram-feed]'); ?>
 </div>
 
-<div id="about" class="col-5 mx-auto text-center">
+<div id="about" class="col-lg-5 col-10 mx-auto text-center">
 	<p>Sinds begin 2021 is Smith & Sinclair in Nederland gevestigd en wordt het merk wereldwijd door diverse distributie partners zowel online als in de retail vertegenwoordigd. Onze missie "Make adult more fun". Met unieke combinaties van alcohol en zoetwaren brengen we het beste uit onze kindertijd samen met de guilty pleasures uit het volwassen leven. It's about sophistication, not intoxication!</p>						
 </div>
 
@@ -129,12 +133,11 @@ get_header();
 					<img src="<?php bloginfo('template_directory'); ?>/assets/img/header-bg-smith-sinclair-1.png')">
 				</div>
 			<div class="col-lg-6 h-100 col-12 offset-0" id="featured__text">
-					<h3 class="featured-title">Nieuw! Naughty or Nice</h3>
+					<h3 class="featured-title d-lg-block">Nieuw! Naughty or Nice</h3>
 					<div class="featured-description">
 						<p>Nog nooit was het zo makkelijk om in de kerstsfeer te komen, met de Naughty or Nice giftboxes. <br>Van Countdown Calendar tot kerstboom ornament.
 				<br>Steel dit jaar de kerstshow met de EAT YOUR DRINK Cocktail Gummies in een unieke kerstverpakking..
 				<br> Zo makkelijk kan het zijn...</p>
-						<br />
 					</div>
 			</div>
 		</div>

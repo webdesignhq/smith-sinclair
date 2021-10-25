@@ -30,6 +30,9 @@ $().ready(()=> {
     $(".menu-toggle").click(function(e) {
         $(".mobile__menu--container").toggleClass('mobile-active')
     });
+    $(".search-toggle").click(function(e) {
+        $(".mobile__search--container").toggleClass('mobile-active')
+    });
 
     // $(".menu-close").click(function(e) {
     //     $(".mobile__menu--container").css('right', '110%');
@@ -38,7 +41,7 @@ $().ready(()=> {
     $("#toggleFilter").click(function(e) {
             $("#filters").toggleClass('activeFilter');
     })
-	
+
 	$('#filter').submit(function(){
 		var filter = $('#filter');
 		$.ajax({

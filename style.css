@@ -214,6 +214,23 @@ header .cart__text {
 }
 
 /* Menu */
+.mobile__search--container{
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.84);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 999;
+  transition: all .3s ease-out;
+  left: 110%;
+  padding-top: 50%;
+}
+
+.mobile__search--container input[type="search"]{
+  width: 100%!important;
+}
+
 .menu ul a li {
   list-style-type: none;
 }
@@ -229,7 +246,7 @@ header .cart__text {
 
 .mobile__menu--container{
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   position: absolute;
   top: 0;
   /* right: 105%; */
@@ -355,7 +372,8 @@ header .cart__text {
 	display: none;
 	font-size: 25px;
 	color: #2a363b!important;
-  background: transparent!important;
+  background: transparent;
+  /* background-color: #000; */
 }
 .sub-menu
 {
@@ -1303,5 +1321,65 @@ width: 100%;
   .category__container .categories .category .button{
     width: 65%;
     top: 65%;
+  }
+
+  #banner{
+    min-height: 75vh;
+  }
+
+  #banner .banner-content{
+    top: 40%!important;
+  }
+  #banner .banner-content h1{
+    font-size: 32px!important;
+    line-height: 48px;
+  }
+  #banner .banner-content span{
+    font-size: 18px;
+  }
+
+  .category .overlay{
+    padding: 25px;
+  }
+  .category .category-title a{
+    font-size: 48px;
+  }
+  #categories .btn{
+    max-width: 50%;
+  }
+  .sbi_photo{
+    height: 47vw!important;
+    width: 47vw!important;
+    object-fit: cover;
+  }
+  .sbi_photo_wrap, .sbi_item{
+    width: 47vw!important;
+  }
+  #sbi_images, #sb_instagram, #instagram{
+    height: 48vw!important;
+    /* width: 260px!important; */
+    overflow-y: hidden;
+  }
+  #featured .featured-title{
+    line-height: 50px;
+  }
+  #featured .featured-image img{
+    height: 300px!important;
+  }
+  #featured__text{
+    padding: 50px;
+  }
+  #newsletter{
+    padding: 50px 0;
+  }
+  #footer img{
+    width: 150px!important;
+    top: -50px!important;
+  }
+  #footer p{
+    margin-top: 20px!important;
+  }
+  #footer{
+    padding-top: 125px!important;
   }
 }
