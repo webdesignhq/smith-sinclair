@@ -53,7 +53,7 @@
 				} ?>
 		</div>
 		<div class="col-lg-5 d-flex flex-row">
-			<button class="search-toggle btn pt-4" type="btn" onclick=""><i class="fas fa-search"></i></button>
+			<button class="search-toggle btn pt-4 d-lg-none d-block" type="btn" onclick=""><i class="fas fa-search"></i></button>
 			<button class="menu-toggle btn pt-3" type="btn" onclick=""><i class="fas fa-bars"></i></button>
 				<nav id="site-navigation" class="main-navigation d-none d-lg-block">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
