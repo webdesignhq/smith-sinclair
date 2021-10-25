@@ -28,12 +28,12 @@ $().ready(()=> {
     });
 
     $(".menu-toggle").click(function(e) {
-        $(".mobile__menu__overlay--container").css('left', '0');
+        $(".mobile__menu--container").toggleClass('mobile-active')
     });
 
-    $(".menu-close").click(function(e) {
-        $(".mobile__menu__overlay--container").css('left', '-100%');
-    });
+    // $(".menu-close").click(function(e) {
+    //     $(".mobile__menu--container").css('right', '110%');
+    // });
 
     $("#toggleFilter").click(function(e) {
             $("#filters").toggleClass('activeFilter');

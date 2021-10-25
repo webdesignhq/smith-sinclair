@@ -28,7 +28,13 @@
 </head>
 
 <body>
-
+<div class="mobile__menu--container">
+	<div class="relative">
+		<nav id="mobile-site-navigation" class="main-navigation absolute d-block d-lg-none">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav>
+	</div>
+</div>
 <header class="container-fluid sticky-top p-0 ">
 	<div class="topheader col-12 p-0 py-2">
 			<div class="container-xxl d-flex flex-row justify-content-end">
@@ -43,7 +49,7 @@
 		</div>
 		<div class="col-lg-5 col-4">
 			<button class="menu-toggle btn" type="btn" onclick=""><i class="fas fa-bars"></i></button>
-				<nav id="site-navigation" class="main-navigation">
+				<nav id="site-navigation" class="main-navigation d-none d-lg-block">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav>
 		</div>
