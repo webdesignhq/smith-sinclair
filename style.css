@@ -1361,7 +1361,7 @@ width: 100%;
     overflow-y: hidden;
   }
   #featured .featured-title{
-    line-height: 50px;
+    line-height: 60px;
   }
   #featured .featured-image img{
     height: 300px!important;
@@ -1381,5 +1381,24 @@ width: 100%;
   }
   #footer{
     padding-top: 125px!important;
+  }
+  .archive .product{
+    width: 100%;
+  }
+  #products .product {
+    max-width: 100%!important;
+  }
+  .archive .newsletter{
+    width: 100%!important;
+  }
+  .category__information--container--title{
+    margin-top: 50px!important;
+  }
+  .header__title{
+    font-size: 28px!important;
+    line-height: 80px!important;
+  }
+  #toggleFilter{
+    max-width: 33%!important;
   }
 }

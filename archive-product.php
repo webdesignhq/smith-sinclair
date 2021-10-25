@@ -31,12 +31,12 @@ if(is_search()){
 	<div class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
 	<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter" class="col-12">
 		<div class="d-flex flex-row col-12">
-			<div class="col-3">
+			<div class="col-lg-3 col-4">
 				<h2>Bedrag</h2>
 				<input type="text" name="price_min" placeholder="Min price" />
 				<input type="text" name="price_max" placeholder="Max price" />
 			</div>
-			<div class="col-3 offset-1 d-flex flex-column">
+			<div class="col-lg-3 col-4 offset-1 d-flex flex-column">
 				<h2>Sorteren</h2>
 				<label>
 					<div class="input-container">
@@ -51,7 +51,7 @@ if(is_search()){
 					</div>
 				</label>
 			</div>
-			<div class="col-3 offset-1">
+			<div class="col-lg-3 d-none d-lg-block offset-1">
 				<input type="hidden" name="action" value="myfilter">
 			</div>	
 		</div>
@@ -64,7 +64,7 @@ if(is_search()){
 </div>
 <!-- <div id="response"> -->
 	<div id="products" class= "archive mt-4">
-		<div id="response" class="container-xxl col-12 d-lg-flex d-block flex-row flex-wrap p-0">
+		<div id="response" class="container-xxl col-12 d-flex d-block flex-row flex-wrap p-0">
 		<?php if (have_posts()) : ?>     
 		<?php
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -176,16 +176,16 @@ if(is_search()){
 	</div>
 <!-- </div> -->
 <?php if($cat){?>
-		<div class="category__information--container--title col-6 mx-auto">
+		<div class="category__information--container--title col-lg-6 col-10  mx-auto">
 			<div class="col-12"><h3 class=""><?php echo single_term_title(); ?></h3></div>
 		</div>
 <?php } else{?>
-		<div class="category__information--container--title col-6 mx-auto">
+		<div class="category__information--container--title col-lg-6 col-10 mx-auto">
 			<div class="col-12"><h3 class="">Winkel</h3></div>
 		</div>
 		<?php } ?>
-		<div class="category__information--container mt-4 pb-5 col-6 mx-auto">
-			<div class="col-12 pe-5">
+		<div class="category__information--container mt-4 pb-5 col-lg-6 col-10 mx-auto">
+			<div class="col-12 pe-lg-5 pe-3">
 				<?php echo the_archive_description(); ?>
 			</div>
 		</div>
