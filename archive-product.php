@@ -39,10 +39,16 @@ if(is_search()){
 			<div class="col-3 offset-1 d-flex flex-column">
 				<h2>Sorteren</h2>
 				<label>
-					<input type="radio" name="date" value="ASC" /> Datum: Asc
+					<div class="input-container">
+					<input type="radio" name="date" value="ASC" /> Datum: Oplopend
+					<span class="mark"></span>
+					</div>
 				</label>
 				<label>
-					<input type="radio" name="date" value="DESC" selected="selected" /> Datum: Desc
+					<div class="input-container">
+						<input type="radio" name="date" value="DESC" selected="selected" /> Datum: Aflopend
+						<span class="mark"></span>
+					</div>
 				</label>
 			</div>
 			<div class="col-3 offset-1">

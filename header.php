@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<div class="mobile__menu--container">
+<div class="mobile__menu--container d-lg-none d-block">
 	<div class="relative">
 		<nav id="mobile-site-navigation" class="main-navigation absolute d-block d-lg-none">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
