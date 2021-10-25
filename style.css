@@ -171,6 +171,8 @@ header .cart__text {
   top: 0;
   /* right: 105%; */
   background-color: var(--white-color);
+  position: fixed;
+  padding-top: 50px;
 }
 
 .main-navigation {
@@ -1099,7 +1101,6 @@ width: 100%;
 	{
 		display: none !important;
 	}
-	
 	.main-navigation 
 	{
 		float: none !important;
@@ -1164,6 +1165,10 @@ width: 100%;
     left: 110%;
   }
 
+  .mobile__menu--container nav ul li{
+    padding: 15px;
+  }
+
   .mobile__menu--container nav ul li a{
     color: var(--primary-color);
   }
@@ -1176,6 +1181,10 @@ width: 100%;
     
   }
   
+  .current-menu-item{
+    display: inline-block!important;
+    width: 50%!important;
+  }
 
 	/* Products Mobile */
   #products .collection__desc{
