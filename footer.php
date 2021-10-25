@@ -16,12 +16,22 @@
 <footer>
 <div id="usps">
 	<div class="col-8 offset-2">
-		<ul class="d-flex flex-row justify-content-between">
-			<li><img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:20px; height: auto;">GRATIS VERZENDING VANAF 37,50</li>
-			<li><img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:20px; height: auto;">UNIEK CADEAU VOOR HEM OF HAAR</li>
-			<li><img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:20px; height: auto;">VOOR 16:00 BESTELD MORGEN IN HUIS</li>
-			<li><img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" alt="" style="width:20px; height: auto;">VEILIG BETALEN</li>
-		</ul>
+	<?php
+
+		$usp_rows = get_field('usps', 'option');
+		if($usp_rows)
+		{
+			echo '<ul>';
+
+			foreach($usp_rows as $row)
+			{
+				echo '<li><img src="'. $row['usp-img'] .'" alt="" style="width:20px; height: auto;">' . $row['usp'] . '</li>';
+			}
+
+			echo '</ul>';
+		}
+
+	?>
 	</div>
 </div>
 <div id="newsletter">
@@ -39,17 +49,18 @@
 			<div class="col-lg-3 col-12">
 				<span>Hoe kunnen wij jou helpen?</span>
 				<p><?php the_field('description', 'option'); ?></p>
-				<div class="socials__container col-6 mt-4 d-flex flex-row justify-content-between">
-					<?php 
-					$rows = get_field('social_media','option');
-					if( $rows ) {
-						
-						foreach( $rows as $row ) {
-							$image = $row['icon']; ?>
-								<a href="<?php echo wpautop( $row['link'] ); ?>"><img src="<?php wp_get_attachment_image( $image, 'full' ); ?>"></a>
-
-						<?php }
-					} ?>
+				<div class="socials__container col-6 mt-4 d-flex flex-row justify-content-start">
+					<?php
+						$socials_rows = get_field('social_media', 'option');
+							if($usp_rows)
+							{
+								foreach($socials_rows as $row)
+								{
+									$image = $row['icon'];
+									echo '<a class="me-3" href="'. $row['link'] .'"><img src="'. $image .'" style="width: 50px; height: 50px; object-fit: cover;"></a>';
+								}
+							}
+					?>
 				</div>
 				
 
