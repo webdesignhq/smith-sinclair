@@ -260,3 +260,41 @@ function woo_cart_but_count( $fragments ) {
      
     return $fragments;
 }
+
+
+// Hook in
+add_filter( 'woocommerce_default_address_fields' , 'custom_override_address_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_address_fields( $address_fields ) {
+	$address_fields['first_name']['placeholder'] = 'Voornaam';
+	$address_fields['last_name']['placeholder'] = 'Achternaam';
+	$address_fields['company']['placeholder'] = 'Bedrijfsnaam (optioneel)';
+	$address_fields['country']['placeholder'] = 'Land/regio';
+	$address_fields['city']['placeholder'] = 'Plaats';
+	$address_fields['postcode']['placeholder'] = 'Postcode';
+	// $address_fields['email']['placeholder'] = 'Postcode';
+	// $address_fields['phone']['placeholder'] = 'Telefoonnummer';
+	
+
+
+	$address_fields['first_name']['label'] = '';
+	$address_fields['last_name']['label'] = '';
+	$address_fields['company']['label'] = '';
+	$address_fields['country']['label'] = '';
+	$address_fields['address_1']['label'] = '';
+	$address_fields['city']['label'] = '';
+	$address_fields['postcode']['label'] = '';
+     return $address_fields;
+}
+
+// Hook in
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+     $fields['billing_email']['label'] = 'My new label';
+	 $fields['billing_phone']['label'] = 'My new label';
+	 
+     return $fields;
+}

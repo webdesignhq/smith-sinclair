@@ -128,6 +128,7 @@ input[type=text], input[type=tel], input[type=email], textarea {
 	border: none;
 	background-color: var(--grey-color);
 	padding: 10px 10px;
+  border-radius: 5px;
 }
 
 .btn{
@@ -1126,6 +1127,59 @@ width: 100%;
 .woocommerce-billing-fields h3, .woocommerce-shipping-fields h3, .woocommerce-additional-fields h3{
   text-align: left;
   font-size: 24px;
+}
+
+.woocommerce-checkout-review-order-table td{
+  text-align: end;
+}
+
+.woocommerce-checkout-review-order-table .product-name{
+  text-align: start;
+}
+
+.woocommerce-checkout-review-order-table .cart_item{
+  border-color: var(--grey-color);
+  font-weight: 400!important;
+}
+
+.woocommerce-checkout-review-order-table .cart_item:last-child td{
+  border-bottom: none!important;
+  border-collapse: collapse;
+}
+
+.woocommerce-checkout-review-order tfoot .shipping th, .woocommerce-checkout-review-order tfoot .shipping td {
+  border-top: none!important;
+  padding-top: 0!important;
+}
+
+.woocommerce-checkout-review-order tfoot td{
+  border-bottom: none!important;
+  padding: 0px!important;
+}
+
+.woocommerce-checkout-review-order .order-total th{
+  padding-top: 25px!important;
+}
+
+#customer_details label{
+  color: rgba(0, 0, 0, 0.7);
+}
+
+#customer_details abbr{
+  color: var(--secondary-color);
+}
+
+#customer_details h3 {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+#customer_details #billing_postcode_field, #customer_details #billing_city_field{
+  display: inline-block;
+  width: 50%;
+}
+
+#customer_details #billing_last_name_field, #customer_details #billing_first_name_field{
+  width: 50%!important;
 }
 
 /* Footer */

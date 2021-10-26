@@ -28,6 +28,11 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 
 ?>
+<style>
+	header, footer{
+		display: none;
+	}
+</style>
 <div class="container-xxl pt-5 pb-5">
 <div class="row">
     <div id="form">
@@ -62,7 +67,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 					
 					<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
-					<div id="order_review" class="woocommerce-checkout-review-order">
+					<div id="order_review" class="woocommerce-checkout-review-order offset-1 col-4">
 						<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 					</div>
 
