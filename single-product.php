@@ -51,6 +51,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="col-lg-12 col-11 pt-5 pb-5 mx-auto mx-lg-0 product__info--container">
 				<p><?php echo $product->description; ?></p>
 				</div>
+
+				<div class="col-lg-12 col-11 pt-5 pb-5 mx-auto mx-lg-0 product__related--container">
+					<?php 
+						global $product;
+
+						if( ! is_a( $product, 'WC_Product' ) ){
+							$product = wc_get_product(get_the_id());
+						}
+						
+						woocommerce_related_products( array(
+							'posts_per_page' => 4,
+							'columns'        => 4,
+							'orderby'        => 'rand'
+						) );
+					?>
+				</div>
+				
 		</div>
 	</div>
 </div>
