@@ -288,13 +288,11 @@ function custom_override_address_fields( $address_fields ) {
      return $address_fields;
 }
 
-// Hook in
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
-
-// Our hooked in function - $fields is passed via the filter!
-function custom_override_checkout_fields( $fields ) {
-     $fields['billing_email']['label'] = 'My new label';
-	 $fields['billing_phone']['label'] = 'My new label';
-	 
-     return $fields;
+add_filter( 'woocommerce_checkout_fields' , 'override_billing_checkout_fields', 20, 1 );
+function override_billing_checkout_fields( $fields ) {
+    $fields['billing']['billing_phone']['placeholder'] = 'Telefoon';
+    $fields['billing']['billing_email']['placeholder'] = 'Email';
+	$fields['billing']['billing_phone']['label'] = '';
+    $fields['billing']['billing_email']['label'] = '';
+    return $fields;
 }
