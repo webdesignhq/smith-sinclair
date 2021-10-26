@@ -857,6 +857,8 @@ width: 100%;
   justify-content: space-between;
   margin-top: 25px;
   padding-left: unset;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .product__related--container .related ul > li{
@@ -864,11 +866,11 @@ width: 100%;
 }
 
 .product__related--container .related ul li{
-  width: 22%!important;
+  width: 24%!important;
   display: inline-flex!important;
   flex-direction: column;
   justify-content: space-between;
-  padding: 50px;
+  padding: 35px;
   text-align: center;
   background-color: var(--grey-color);
 }

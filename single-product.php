@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p><?php echo $product->description; ?></p>
 				</div>
 
-				<div class="col-lg-12 col-11 pt-5 pb-5 mx-auto mx-lg-0 product__related--container">
+				<div class="col-lg-9 col-11 pt-5 pb-5 mx-auto mx-lg-auto product__related--container">
 					<?php 
 						global $product;
 
