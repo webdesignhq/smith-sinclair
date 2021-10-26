@@ -1178,7 +1178,7 @@ width: 100%;
   color: rgba(0, 0, 0, 0.7);
 }
 
-#customer_details #billing_postcode_field, #customer_details #billing_city_field{
+#customer_details #billing_postcode_field, #customer_details #billing_city_field, #customer_details #shipping_first_name_field, #customer_details #shipping_last_name_field {
   display: inline-block;
   width: 50%;
 }
@@ -1190,17 +1190,20 @@ width: 100%;
 #customer_details #billing_first_name, #customer_details #billing_last_name, #customer_details #billing_first_name_field, 
 #customer_details #billing_last_name_field, #customer_details #billing_address_1, 
 #customer_details #billing_address_1_field, #customer_details #billing_postcode, #customer_details #billing_city, 
-#customer_details #billing_address_2_field, #customer_details #billing_address_2, #customer_details #billing_phone, #customer_details  #billing_phone_field{
+#customer_details #billing_address_2_field, #customer_details #billing_address_2, #customer_details #billing_phone, 
+#customer_details  #billing_phone_field, #customer_details #billing_country_field, #customer_details #shipping_first_name_field, 
+#customer_details #shipping_last_name_field, #customer_details #shipping_last_name, #customer_details #shipping_first_name{
   margin-bottom: 0!important;
 }
 
 #customer_details #billing_company, #customer_details #billing_address_2, #customer_details #billing_address_2_field,
- #customer_details #billing_postcode, #customer_details #billing_city_field, #customer_details #billing_city, #customer_details #billing_email {
+ #customer_details #billing_postcode, #customer_details #billing_city_field, #customer_details #billing_city, #customer_details #billing_email,
+ #customer_details #shipping_company, #customer_details #shipping_last_name_field  {
   margin-top: 0!important;
 }
 
-#customer_details  #billing_phone_field{
-  margin-top: 10px!important;
+#customer_details  #billing_phone_field, #customer_details #billing_country_field{
+  margin-top: 20px!important;
 }
 
 /* Footer */
