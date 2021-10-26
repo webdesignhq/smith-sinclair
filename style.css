@@ -7,6 +7,10 @@
  Tags:         light, colors, simple , no sidebar, responsive-layout, accessibility-ready
 */
 
+@font-face{
+  font-family: 'Terrazzo';
+  src: url('/smithsinclair.nl/wp-content/themes/smith-sinclair/assets/fonts/Terrazzo-Regular.otf') format('opentype');
+}
 
 :root {
   --primary-color: #000;
@@ -14,7 +18,7 @@
   --white-color: #fff;
   --grey-color: #F5F5F5;
   --darkgrey-color: #B2B2B2;
-  --primary-font: 'Montserrat', sans-serif;
+  --primary-font: 'Terrazzo', sans-serif;
   --secondary-font: 'Poppins', sans-serif;
 }
 
@@ -265,7 +269,7 @@ header .cart__text {
 	z-index: 999;
 	text-transform: uppercase;
 	font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--primary-font);
 }
 .main-navigation ul {
 	list-style: none;
@@ -570,6 +574,7 @@ font-weight: 800;
 	font-size: 64px;
 	color: var(--white-color);
 	font-weight: 900;
+  /* font-family: var(--primary-font); */
 	text-transform: uppercase;
 }
 
