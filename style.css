@@ -186,9 +186,12 @@ header {
 
 header .search input {
   width: 100%;
-  background-color: var(--grey-color);
-  color: var(--darkgrey-color);
-  border: unset;
+  background-color: var(--grey-color)!important;
+  color: var(--darkgrey-color)!important;
+  border: unset!important;
+}
+header .search input:focus{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)!important;
 }
 
 header .cart__text {

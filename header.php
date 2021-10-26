@@ -37,7 +37,7 @@
 </div>
 <div class="mobile__search--container d-lg-none d-block">
 	<div class="col-8 mx-auto">
-		<?php get_search_form(); ?>
+		<?php echo do_shortcode('[fibosearch]'); ?>
 	</div>	
 </div>
 <header class="container-fluid sticky-top p-0 ">
@@ -60,7 +60,7 @@
 				</nav>
 		</div>
 		<div class="search col-lg-2 col-2 mt-lg-0 mt-4 d-lg-block d-none">
-			<?php get_search_form(); ?>
+			<?php echo do_shortcode('[fibosearch]'); ?>
 		</div>
 		<div class="shop__controls col-lg-2 col-1 text-align-right d-none d-lg-inline-flex justify-content-lg-end align-items-center justify-content-center mt-lg-0 mt-0">
 			<div id="weglot_here"></div>
