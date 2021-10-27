@@ -30,12 +30,35 @@ $().ready(()=> {
         }
     });
 
+        ;
+    ( function ( $ ) {
+    "use strict";
+    // Define the PHP function to call from here
+    var data = {
+    'action': 'mode_theme_update_mini_cart'
+    };
+    $.post(
+    woocommerce_params.ajax_url, // The AJAX URL
+    data, // Send our PHP function
+    function(response){
+        $('#mode-mini-cart').html(response); // Repopulate the specific element with the new content
+    }
+    );
+    // Close anon function.
+    }( jQuery ) );
+
     $('.page-transition').addClass('page-transition-anim');
 
     $('.mini-cart').click((e)=>{
-        e.preventDefault();
         $('.widget_shopping_cart_content').toggleClass('active_mini_cart');
         $('.mini-cart__container').toggleClass('active_mini_cart');
+    });
+
+    $('.add_to_cart_button').click((e)=>{
+        
+        $('.widget_shopping_cart_content').addClass('active_mini_cart');
+        $('.mini-cart__container').addClass('active_mini_cart');
+        // return false;
     });
 
     
