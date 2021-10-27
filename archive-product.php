@@ -123,7 +123,7 @@ if(is_search()){
 		?>
 
 		<div class="product d-flex flex-column mt-1 clickable justify-content-between">
-		<i class="fa-regular fa-heart product__favorites--button" aria-hidden="true"></i>
+		<!-- <i class="fa-regular fa-heart product__favorites--button" aria-hidden="true"></i> -->
 			<img style="width:100%;" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image mx-auto" />
 			<p class="product-title mt-4"><?php the_title() ?></p>
 			<span class="product-price"><?php echo $product->get_price_html();  ?></span>
@@ -150,7 +150,7 @@ if(is_search()){
 		?>
 
 		<div class="product d-flex flex-column mt-1 clickable justify-content-between">
-			<i class="fa-regular fa-heart product__favorites--button" aria-hidden="true"></i>
+			<!-- <i class="fa-regular fa-heart product__favorites--button" aria-hidden="true"></i> -->
 			<img style="width:100%;" src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image mx-auto" />
 			<p class="product-title mt-4"><?php the_title() ?></p>
 			<span class="product-price"><?php echo $product->get_price_html();  ?></span>

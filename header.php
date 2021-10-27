@@ -40,6 +40,12 @@
 		<?php echo do_shortcode('[fibosearch]'); ?>
 	</div>	
 </div>
+<div class="age__check position-absolute d-flex flex-column justify-content-center">
+	<div class="age__check-form col-4 mx-auto">
+	<p>AGECHECK</p>
+	</div>
+	
+</div>
 <header class="container-fluid sticky-top p-0 ">
 	<div class="topheader col-12 p-0 py-2">
 			<div class="container-xxl d-flex flex-row justify-content-lg-end justify-content-center">
