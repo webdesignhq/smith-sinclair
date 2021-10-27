@@ -48,7 +48,7 @@
 		<div class="col-lg-10 col-12 mx-auto d-lg-flex d-block flex-row justify-content-lg-between justify-content-start">
 			<div class="col-lg-3 col-12">
 				<span>Hoe kunnen wij jou helpen?</span>
-				<p><?php the_field('description', 'option'); ?></p>
+				<p class="col-10"><?php the_field('description', 'option'); ?></p>
 				<div class="socials__container col-6 mt-4 d-flex flex-row justify-content-start">
 					<?php
 						$socials_rows = get_field('social_media', 'option');

@@ -24,7 +24,7 @@
 
 
 /* Helpers */
-html, body, p{
+html, body{
   padding: 0;
   margin: 0;
   font-size: 16px;
@@ -35,10 +35,13 @@ body{
   position: relative;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5  {
 	font-family: var(--primary-font);
 	color: var(--primary-color);
 	text-transform: uppercase;
+}
+p, li, a{
+  font-family: var(--primary-font);
 }
 
 a {
@@ -156,6 +159,10 @@ input[type=text], input[type=tel], input[type=email], textarea {
 
 .topheader {
 	background-color: var(--grey-color);
+}
+
+.topheader p{
+  margin: unset;
 }
 
 header {
@@ -868,7 +875,7 @@ width: 100%;
 }
 
 .product__related--container .related ul li{
-  width: 24%!important;
+  width: 19%!important;
   display: inline-flex!important;
   flex-direction: column;
   justify-content: space-between;
@@ -1209,7 +1216,8 @@ width: 100%;
 /* Footer */
 #footer{
 	background-color: var(--primary-color);
-	padding: 200px 0;
+	padding-top: 100px;
+  padding-bottom: 25px;
 }
 
 #footer span{
@@ -1221,20 +1229,22 @@ width: 100%;
 
 #footer p {
 	color: var(--white-color);
-	margin-top: 50px;
 	font-size: 14px;
+  padding: 10px 0px;
+  text-transform: unset;
 }
 
 #footer ul{
 	color: var(--white-color);
 	list-style: none;
 	padding: 10px 0px;
-	margin-top: 50px;
-	font-size: 18px;
+	font-size: 14px;
+  
 }
 
 #footer ul li {
-	padding: 10px 0px;
+	padding: 3px 0px;
+  text-transform: unset;
 }
 
 #footer ul li a {

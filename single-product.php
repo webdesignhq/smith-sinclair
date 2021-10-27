@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<!-- <img src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="product__image product__image--single mx-auto" /> -->
 				   <?php do_action('woocommerce_before_single_product_summary'); ?>
 				</div>
-				<div class="col-lg-4 col-11 mx-auto mx-lg-0 product__info--container">
+				<div class="col-lg-4 col-11 mx-auto me-0 ms-5 product__info--container">
 					<div class="row">
 						<div class="col-11">
 							<h1 class="product-title"><?php the_title() ?></h1>  
@@ -38,21 +38,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 				   
 					<div class="price--container row mt-4">
 						<div class="col-12 pb-3">
-							<?php echo $product->short_description; ?>
+							<p><?php echo the_excerpt(); ?></p>
 						</div>
 						<div class="col-4">
 							<span class="price"><?php echo $product->get_price_html(); ?></span>
 						</div>
 					</div>
-					<div class="col-lg-6 col-11 mt-5">
+					<div class="col-lg-6 col-11 mt-3">
 						<?php echo '<a class="btn btn-primary" href="'. $checkout_url.'?add-to-cart=' .$productID. '">'?><?php the_field('txt-cart-btn', 'option'); ?></a>
 					</div>
-				</div>
-				<div class="col-lg-12 col-11 pt-5 pb-5 mx-auto mx-lg-0 product__info--container">
-				<p><?php echo $product->description; ?></p>
+					<div class="col-lg-12 col-11 mt-5">
+					<p><?php echo the_content(); ?></p>
+					</div>
 				</div>
 
-				<div class="col-lg-9 col-11 pt-5 pb-5 mx-auto mx-lg-auto product__related--container">
+				<div class="col-lg-12 col-11 mt-5 pt-5 pb-5 px-lg-5 product__related--container">
 					<?php 
 						global $product;
 
@@ -61,8 +61,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						}
 						
 						woocommerce_related_products( array(
-							'posts_per_page' => 4,
-							'columns'        => 4,
+							'posts_per_page' => 5,
+							'columns'        => 5,
 							'orderby'        => 'rand'
 						) );
 					?>
