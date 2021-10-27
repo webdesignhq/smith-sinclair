@@ -42,7 +42,7 @@
 </div>
 <div class="age__check position-absolute flex-column justify-content-center">
 	<div class="age__check-form col-xl-4 col-lg-6 col-md-8 col-10 mx-auto">
-		<img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" style="width: 100px"/>
+		<img src="<?php the_field('age-check-img', 'option'); ?>" style="width: 100px"/>
 		<div class="text-center">
 			<p class="m-0">Welkom!</p>
 			<p class="m-0">Ben jij 18 jaar of ouder?</p>
