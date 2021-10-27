@@ -40,9 +40,18 @@
 		<?php echo do_shortcode('[fibosearch]'); ?>
 	</div>	
 </div>
-<div class="age__check position-absolute d-flex flex-column justify-content-center">
-	<div class="age__check-form col-4 mx-auto">
-	<p>AGECHECK</p>
+<div class="age__check position-absolute flex-column justify-content-center">
+	<div class="age__check-form col-xl-4 col-lg-6 col-md-8 col-10 mx-auto">
+		<img src="<?php bloginfo('template_directory'); ?>/assets/img/icon.png" style="width: 100px"/>
+		<div class="text-center">
+			<p class="m-0">Welkom!</p>
+			<p class="m-0">Ben jij 18 jaar of ouder?</p>
+		</div>
+		<form id="ageCheckForm" action="" class="text-center">
+			<label for="birthday"></label>
+			<input type="date" id="birthday" name="birthday" class="col-7 mt-4">
+			<input type="submit" class="btn mt-2 ms-2" value="Ja, ik ben ouder dan 18 jaar!">
+		</form>
 	</div>
 	
 </div>

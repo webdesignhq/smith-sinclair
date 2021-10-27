@@ -127,7 +127,7 @@ a {
 	max-width: 90%;
 }
 
-input[type=text], input[type=tel], input[type=email], input[type=password], textarea {
+input[type=text], input[type=tel], input[type=email], input[type=password],input[type=date], textarea {
 	border: none;
 	background-color: var(--grey-color);
 	padding: 10px 10px;
@@ -141,7 +141,7 @@ input[type=text], input[type=tel], input[type=email], input[type=password], text
   text-transform: uppercase;
   font-size: 16px;
   padding: 14px 12px 12px 12px ;
-  width: 80%;
+  /* width: 80%; */
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -901,7 +901,7 @@ width: 100%;
 
 .product__related--container .related ul li .button{
   background-color: var(--primary-color);
-  width: 80%;
+  /* width: 80%; */
   padding: 14px 12px 12px 12px;
   margin-left: auto;
   margin-right: auto;
@@ -1371,17 +1371,23 @@ width: 100%;
   background-color: rgba(0, 0, 0, 0.25);
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: fixed!important;
+  display: flex;
   left: auto;
   top: 0;
   z-index: 2000;
-  display: none!important;
+  /* display: none!important; */
 }
 
 .age__check-form{
-  height: 200px!important;
+  height: 375px!important;
   background-color: var(--white-color);
-  padding: 15px;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
 }
 
 

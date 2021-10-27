@@ -1,7 +1,31 @@
 $().ready(()=> {
     console.log('reaedy');
-    sessionStorage.setItem('ageCheck', 0);
-    var ageCheck = 
+    var ageCheck = sessionStorage.getItem('ageCheck');
+    
+    if (ageCheck === '1'){
+        $('.age__check').hide();
+    } 
+
+    $('#ageCheckForm').submit((e)=>{
+        e.preventDefault();
+        var ageVal =  $('#birthday').val();
+        var age = new Date(ageVal);
+        var monthDiff = Date.now() - age.getTime();
+        console.log(ageVal)
+        var age_dt = new Date(monthDiff);
+        var year = age_dt.getUTCFullYear();
+
+        var ageString = Math.abs(year - 1970);
+        console.log(ageString);
+
+        if(ageString > 18){
+            $('.age__check').hide();
+            sessionStorage.setItem('ageCheck', 1);
+        } else{
+            alert('sorry je moet 18 jaar of ouder zijn om deze website te bekijken')
+        }
+
+    });
 
     $('.slider-for').slick({
         slidesToShow: 1,
