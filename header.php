@@ -40,11 +40,16 @@
 		<?php echo do_shortcode('[fibosearch]'); ?>
 	</div>	
 </div>
+<div class="mini-cart__container">
+</div>
+<div class="widget_shopping_cart_content col-4">
+		<?php woocommerce_mini_cart(); ?>
+	</div>
 <div class="age__check position-absolute flex-column justify-content-center">
 	<div class="age__check-form col-xl-4 col-lg-6 col-md-8 col-10 mx-auto">
 		<img src="<?php the_field('age-check-img', 'option'); ?>" style="width: 100px"/>
 		<div class="text-center">
-			<p class="m-0">Welkom!</p>
+			<p class="m-0 mt-2">Welkom!</p>
 			<p class="m-0">Ben jij 18 jaar of ouder?</p>
 		</div>
 		<form id="ageCheckForm" action="" class="text-center">
@@ -80,7 +85,8 @@
 		<div class="shop__controls col-lg-2 col-1 text-align-right d-none d-lg-inline-flex justify-content-lg-end align-items-center justify-content-center mt-lg-0 mt-0">
 			<div id="weglot_here"></div>
 			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="mx-lg-3 mx-2"><i class="fas fa-user"></i></a>
-			<?php echo do_shortcode("[woo_cart_but]"); ?>
+			<!-- <?php echo do_shortcode("[woo_cart_but]"); ?> -->
+			<a class="mini-cart" href="#"><i class="fas fa-shopping-basket"></i></a>
 		</div>
 	</div>
 

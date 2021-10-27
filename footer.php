@@ -13,6 +13,10 @@
 
 ?>
 
+<div class="page-transition">
+	
+</div>
+
 <footer>
 <div id="usps">
 	<div class="col-10 offset-1">

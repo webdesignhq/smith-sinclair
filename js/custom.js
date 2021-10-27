@@ -1,10 +1,14 @@
+var ageCheck = sessionStorage.getItem('ageCheck');
+    
+if (ageCheck === '1'){
+    $('.age__check').hide();
+} else{
+    $('.age__check').show();
+}
+
+
 $().ready(()=> {
     console.log('reaedy');
-    var ageCheck = sessionStorage.getItem('ageCheck');
-    
-    if (ageCheck === '1'){
-        $('.age__check').hide();
-    } 
 
     $('#ageCheckForm').submit((e)=>{
         e.preventDefault();
@@ -24,7 +28,22 @@ $().ready(()=> {
         } else{
             alert('sorry je moet 18 jaar of ouder zijn om deze website te bekijken')
         }
+    });
 
+    $('.page-transition').addClass('page-transition-anim');
+
+    $('.mini-cart').click((e)=>{
+        e.preventDefault();
+        $('.widget_shopping_cart_content').toggleClass('active_mini_cart');
+        $('.mini-cart__container').toggleClass('active_mini_cart');
+    });
+
+    
+
+    $('.mini-cart__container').click((e)=>{
+        e.preventDefault();
+        $('.widget_shopping_cart_content').toggleClass('active_mini_cart');
+        $('.mini-cart__container').toggleClass('active_mini_cart');
     });
 
     $('.slider-for').slick({
