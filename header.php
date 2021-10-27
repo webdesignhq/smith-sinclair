@@ -75,7 +75,7 @@
 		<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
 		
 		<div id="bannerindex" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat; background-size: cover;">
-		<div class="container-xxl">
+		<div class="container-xxl d-flex flex-column justify-content-center h-100">
 			<div class="row justify-content-center">
 					<div class="col-md-8 text-center">
 						<div class="bannerindexcontent text-left p-4">
