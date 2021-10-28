@@ -1013,7 +1013,7 @@ width: 100%;
   transition: all .3s ease-in-out;
 }
 
-.mini-cart-container{
+.mini-cart-container, .mini-account-container{
   width: 25%;
   position: fixed!important;
   right: -100%;

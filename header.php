@@ -47,6 +47,14 @@
 			<?php woocommerce_mini_cart(); ?>
 	</div>
 </div>
+<div class="mini-account-container pt-5">
+<?php
+	if ( ! is_user_logged_in() ) {
+		wp_login_form( array( 'redirect' => home_url( 'mijn-account' ) ) );
+	}else{
+	 echo wp_login_form();
+	 } ?>
+</div>
 <div class="age__check position-absolute flex-column justify-content-center">
 	<div class="age__check-form col-xl-4 col-lg-6 col-md-8 col-10 mx-auto">
 		<img src="<?php the_field('age-check-img', 'option'); ?>" style="width: 100px"/>
@@ -86,7 +94,11 @@
 		</div>
 		<div class="shop__controls col-lg-2 col-1 text-align-right d-none d-lg-inline-flex justify-content-lg-end align-items-center justify-content-center mt-lg-0 mt-0">
 			<div id="weglot_here"></div>
-			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="mx-lg-3 mx-2"><i class="fas fa-user"></i></a>
+			<?php if ( ! is_user_logged_in() ) { ?>
+				<a href="#" class="mx-lg-3 mx-2 my-account-btn"><i class="fas fa-user"></i></a>
+			<?php } else { ?>
+				<a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>" class="mx-lg-3 mx-2"><i class="fas fa-user"></i></a>
+			<?php } ?>
 			<!-- <?php echo do_shortcode("[woo_cart_but]"); ?> -->
 			<a class="mini-cart" href="#"><i class="fas fa-shopping-basket"></i></a>
 		</div>

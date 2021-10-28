@@ -61,7 +61,14 @@ $().ready(()=> {
 
     $('.mini-cart__container').click((e)=>{
         e.preventDefault();
-        $('.mini-cart-container').toggleClass('active_mini_cart');
+        $('.mini-cart-container').removeClass('active_mini_cart');
+        $('.mini-account-container').removeClass('active_mini_cart');
+        $('.mini-cart__container').removeClass('active_mini_cart_container');
+    });
+
+    $('.my-account-btn').click((e)=>{
+        e.preventDefault();
+        $('.mini-account-container').toggleClass('active_mini_cart');
         $('.mini-cart__container').toggleClass('active_mini_cart_container');
     });
 
