@@ -91,6 +91,12 @@ $().ready(()=> {
         window.location = $(this).find('a').attr('href');
     });
 
+    $(".menu-item").click(function(e) {
+        e.preventDefault();
+        window.location = $(this).find('a').attr('href');
+    });
+
+
     $(".menu-toggle").click(function(e) {
         $(".mobile__menu--container").toggleClass('mobile-active')
     });
