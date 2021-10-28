@@ -47,7 +47,7 @@
 			<?php woocommerce_mini_cart(); ?>
 	</div>
 </div>
-<div class="mini-account-container pt-5">
+<div class="mini-account-container p-5">
 <?php
 	if ( ! is_user_logged_in() ) {
 		wp_login_form( array( 'redirect' => home_url( 'mijn-account' ) ) );

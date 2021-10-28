@@ -959,6 +959,22 @@ width: 100%;
 }
 
 /* Account */
+#loginform{
+  margin-top: 50px;
+}
+
+#loginform .login-password, #loginform .login-username{
+  display: flex;
+  flex-direction: column;
+} 
+
+#loginform .login-submit input{
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 12px 15px;
+  border: unset;
+}
+
 .woocommerce-MyAccount-navigation ul{
   list-style-type: none;
   overflow: hidden;
