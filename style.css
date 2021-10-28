@@ -985,8 +985,8 @@ width: 100%;
   padding: 15px 0;
 }
 /* Cart */
-.added_to_cart .wc-forward{
-  display: none;
+.product__info--container .added_to_cart{
+  display: none!important;
 }
 
 .active_mini_cart{
