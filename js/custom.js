@@ -6,7 +6,6 @@ if (ageCheck === '1'){
     $('.age__check').show();
 }
 
-
 $().ready(()=> {
     console.log('reaedy');
 
@@ -50,23 +49,20 @@ $().ready(()=> {
     $('.page-transition').addClass('page-transition-anim');
 
     $('.mini-cart').click((e)=>{
-        $('.widget_shopping_cart_content').toggleClass('active_mini_cart');
-        $('.mini-cart__container').toggleClass('active_mini_cart');
+        $('.mini-cart-container').toggleClass('active_mini_cart');
+        $('.mini-cart__container').toggleClass('active_mini_cart_container');
     });
 
     $('.add_to_cart_button').click((e)=>{
-        
-        $('.widget_shopping_cart_content').addClass('active_mini_cart');
-        $('.mini-cart__container').addClass('active_mini_cart');
+        $('.mini-cart-container').addClass('active_mini_cart');
+        $('.mini-cart__container').addClass('active_mini_cart_container');
         // return false;
     });
 
-    
-
     $('.mini-cart__container').click((e)=>{
         e.preventDefault();
-        $('.widget_shopping_cart_content').toggleClass('active_mini_cart');
-        $('.mini-cart__container').toggleClass('active_mini_cart');
+        $('.mini-cart-container').toggleClass('active_mini_cart');
+        $('.mini-cart__container').toggleClass('active_mini_cart_container');
     });
 
     $('.slider-for').slick({
@@ -208,8 +204,7 @@ function getAge(birthDateString) {
 
 if(getAge("27/06/1989") >= 18) {
     alert("You have 18 or more years old!");
-} 
-
-
-	
+} 	
 });
+
+

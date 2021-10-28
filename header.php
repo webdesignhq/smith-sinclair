@@ -42,9 +42,11 @@
 </div>
 <div class="mini-cart__container">
 </div>
-<div class="widget_shopping_cart_content col-4">
-		<?php woocommerce_mini_cart(); ?>
+<div class="mini-cart-container">
+	<div class="widget_shopping_cart_content col-4">
+			<?php woocommerce_mini_cart(); ?>
 	</div>
+</div>
 <div class="age__check position-absolute flex-column justify-content-center">
 	<div class="age__check-form col-xl-4 col-lg-6 col-md-8 col-10 mx-auto">
 		<img src="<?php the_field('age-check-img', 'option'); ?>" style="width: 100px"/>

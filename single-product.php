@@ -45,8 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 					</div>
 					<div class="col-lg-6 col-11 mt-3">
-						<a class="btn btn-primary ajax_add_to_cart add_to_cart_button" href="<?php echo $product->add_to_cart_url() ?>" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="<?php echo esc_attr($sku) ?>"><?php the_field('txt-cart-btn', 'option'); ?></a>
-						
+						<a class="btn btn-primary ajax_add_to_cart add_to_cart_button" href="<?php echo $product->add_to_cart_url() ?>" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="<?php echo $product->get_sku(); ?>"><?php the_field('txt-cart-btn', 'option'); ?></a>
 					</div>
 					<div class="col-lg-12 col-11 mt-5">
 					<p><?php echo the_content(); ?></p>
